@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioCreateDTO;
@@ -21,11 +20,10 @@ import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.DetalleIntercam
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.IntercambioMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository;
-import py.com.lavitrinacoleccionistas.intercambiossoporte.specification.IntercambioSpecification;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class IntercambioServiceImpl implements IIntercambioService {
 
     private final IIntercambioRepository intercambioRepository;
@@ -36,54 +34,20 @@ public class IntercambioServiceImpl implements IIntercambioService {
     @Override
     @Transactional
     public IntercambioDTO crear(IntercambioCreateDTO dto) {
-
         log.info(
-                "Iniciando creación de intercambio. Proponente: {}, receptor: {}",
+                "Creando intercambio entre usuario {} y usuario {}",
                 dto.getIdUsuarioProponente(),
                 dto.getIdUsuarioReceptor()
         );
 
         Intercambio intercambio = intercambioMapper.toEntity(dto);
+        intercambio.setActivo(true);
 
-        if (dto.getDetalles() != null) {
+        agregarDetalles(intercambio, dto.getDetalles());
 
-            log.debug(
-                    "Procesando {} detalles para el nuevo intercambio",
-                    dto.getDetalles().size()
-            );
+        Intercambio guardado = intercambioRepository.save(intercambio);
 
-            for (DetalleIntercambioCreateDTO detalleDTO : dto.getDetalles()) {
-
-                log.debug(
-                        "Buscando producto con id: {}",
-                        detalleDTO.getIdProducto()
-                );
-
-                Producto producto = productoRepository
-                        .findById(detalleDTO.getIdProducto())
-                        .orElseThrow(() -> new ResourceNotFoundException(
-                                "Producto no encontrado con id: "
-                                        + detalleDTO.getIdProducto()
-                        ));
-
-                DetalleIntercambio detalle =
-                        detalleIntercambioMapper.toEntity(detalleDTO);
-
-                detalle.setIntercambio(intercambio);
-                detalle.setProducto(producto);
-                detalle.setNombreProductoSnapshot(producto.getNombre());
-
-                intercambio.getDetalles().add(detalle);
-            }
-        }
-
-        Intercambio guardado =
-                intercambioRepository.save(intercambio);
-
-        log.info(
-                "Intercambio creado correctamente con id: {}",
-                guardado.getId()
-        );
+        log.info("Intercambio creado con id: {}", guardado.getId());
 
         return intercambioMapper.toDTO(guardado);
     }
@@ -91,14 +55,9 @@ public class IntercambioServiceImpl implements IIntercambioService {
     @Override
     @Transactional(readOnly = true)
     public IntercambioDTO obtenerPorId(Long id) {
+        log.debug("Buscando intercambio activo con id: {}", id);
 
-        log.debug("Buscando intercambio con id: {}", id);
-
-        Intercambio intercambio = intercambioRepository
-                .findByIdAndActivoTrue(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "Intercambio no encontrado con id: " + id
-                ));
+        Intercambio intercambio = obtenerIntercambioActivo(id);
 
         return intercambioMapper.toDTO(intercambio);
     }
@@ -110,22 +69,14 @@ public class IntercambioServiceImpl implements IIntercambioService {
             EstadoIntercambio estado,
             Pageable pageable
     ) {
-
         log.debug(
-                "Buscando intercambios. Usuario: {}, estado: {}",
+                "Buscando intercambios activos. Usuario: {}, estado: {}",
                 idUsuario,
                 estado
         );
 
-        Specification<Intercambio> specification =
-                IntercambioSpecification.estaActivo()
-                        .and(IntercambioSpecification
-                                .tieneUsuario(idUsuario))
-                        .and(IntercambioSpecification
-                                .tieneEstado(estado));
-
         return intercambioRepository
-                .findAll(specification, pageable)
+                .buscarActivos(idUsuario, estado, pageable)
                 .map(intercambioMapper::toDTO);
     }
 
@@ -135,51 +86,18 @@ public class IntercambioServiceImpl implements IIntercambioService {
             Long id,
             IntercambioUpdateDTO dto
     ) {
+        log.info("Actualizando intercambio con id: {}", id);
 
-        log.info("Iniciando actualización del intercambio con id: {}", id);
-
-        Intercambio intercambio = intercambioRepository
-                .findByIdAndActivoTrue(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "Intercambio no encontrado con id: " + id
-                ));
+        Intercambio intercambio = obtenerIntercambioActivo(id);
 
         intercambioMapper.updateEntity(dto, intercambio);
 
         intercambio.getDetalles().clear();
+        agregarDetalles(intercambio, dto.getDetalles());
 
-        log.debug(
-                "Reemplazando detalles del intercambio {}. Cantidad nueva: {}",
-                id,
-                dto.getDetalles().size()
-        );
+        Intercambio actualizado = intercambioRepository.save(intercambio);
 
-        for (DetalleIntercambioCreateDTO detalleDTO : dto.getDetalles()) {
-
-            Producto producto = productoRepository
-                    .findById(detalleDTO.getIdProducto())
-                    .orElseThrow(() -> new ResourceNotFoundException(
-                            "Producto no encontrado con id: "
-                                    + detalleDTO.getIdProducto()
-                    ));
-
-            DetalleIntercambio detalle =
-                    detalleIntercambioMapper.toEntity(detalleDTO);
-
-            detalle.setIntercambio(intercambio);
-            detalle.setProducto(producto);
-            detalle.setNombreProductoSnapshot(producto.getNombre());
-
-            intercambio.getDetalles().add(detalle);
-        }
-
-        Intercambio actualizado =
-                intercambioRepository.save(intercambio);
-
-        log.info(
-                "Intercambio actualizado correctamente con id: {}",
-                actualizado.getId()
-        );
+        log.info("Intercambio actualizado con id: {}", id);
 
         return intercambioMapper.toDTO(actualizado);
     }
@@ -190,28 +108,22 @@ public class IntercambioServiceImpl implements IIntercambioService {
             Long id,
             IntercambioEstadoUpdateDTO dto
     ) {
-
         log.info(
                 "Actualizando estado del intercambio {} a {}",
                 id,
                 dto.getEstado()
         );
 
-        Intercambio intercambio = intercambioRepository
-                .findByIdAndActivoTrue(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "Intercambio no encontrado con id: " + id
-                ));
+        Intercambio intercambio = obtenerIntercambioActivo(id);
 
         intercambio.setEstado(
                 EstadoIntercambio.valueOf(dto.getEstado().name())
         );
 
-        Intercambio actualizado =
-                intercambioRepository.save(intercambio);
+        Intercambio actualizado = intercambioRepository.save(intercambio);
 
         log.info(
-                "Estado del intercambio {} actualizado correctamente a {}",
+                "Estado del intercambio {} actualizado a {}",
                 id,
                 actualizado.getEstado()
         );
@@ -222,25 +134,49 @@ public class IntercambioServiceImpl implements IIntercambioService {
     @Override
     @Transactional
     public void eliminar(Long id) {
+        log.info("Realizando eliminación lógica del intercambio con id: {}", id);
 
-        log.info(
-                "Iniciando eliminación lógica del intercambio con id: {}",
-                id
-        );
-
-        Intercambio intercambio = intercambioRepository
-                .findByIdAndActivoTrue(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "Intercambio no encontrado con id: " + id
-                ));
+        Intercambio intercambio = obtenerIntercambioActivo(id);
 
         intercambio.setActivo(false);
-
         intercambioRepository.save(intercambio);
 
-        log.info(
-                "Intercambio {} eliminado lógicamente correctamente",
-                id
-        );
+        log.info("Intercambio con id {} marcado como inactivo", id);
+    }
+
+    private Intercambio obtenerIntercambioActivo(Long id) {
+        return intercambioRepository
+                .findByIdAndActivoTrue(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Intercambio no encontrado con id: " + id
+                        )
+                );
+    }
+
+    private void agregarDetalles(
+            Intercambio intercambio,
+            Iterable<DetalleIntercambioCreateDTO> detalles
+    ) {
+        for (DetalleIntercambioCreateDTO detalleDTO : detalles) {
+
+            Producto producto = productoRepository
+                    .findById(detalleDTO.getIdProducto())
+                    .orElseThrow(() ->
+                            new ResourceNotFoundException(
+                                    "Producto no encontrado con id: "
+                                            + detalleDTO.getIdProducto()
+                            )
+                    );
+
+            DetalleIntercambio detalle =
+                    detalleIntercambioMapper.toEntity(detalleDTO);
+
+            detalle.setIntercambio(intercambio);
+            detalle.setProducto(producto);
+            detalle.setNombreProductoSnapshot(producto.getNombre());
+
+            intercambio.getDetalles().add(detalle);
+        }
     }
 }

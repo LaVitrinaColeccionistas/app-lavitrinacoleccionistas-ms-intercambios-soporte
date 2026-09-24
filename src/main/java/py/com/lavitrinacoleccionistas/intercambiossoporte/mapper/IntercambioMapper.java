@@ -22,16 +22,16 @@ public interface IntercambioMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "estado", constant = "PROPUESTO")
-    @Mapping(target = "detalles", ignore = true)
     @Mapping(target = "activo", ignore = true)
+    @Mapping(target = "detalles", ignore = true)
     @Mapping(target = "fechaCreacion", ignore = true)
     @Mapping(target = "fechaActualizacion", ignore = true)
     Intercambio toEntity(IntercambioCreateDTO dto);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "estado", ignore = true)
-    @Mapping(target = "detalles", ignore = true)
     @Mapping(target = "activo", ignore = true)
+    @Mapping(target = "detalles", ignore = true)
     @Mapping(target = "fechaCreacion", ignore = true)
     @Mapping(target = "fechaActualizacion", ignore = true)
     void updateEntity(

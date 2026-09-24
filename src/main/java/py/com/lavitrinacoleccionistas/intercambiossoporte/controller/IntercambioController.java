@@ -1,11 +1,9 @@
 package py.com.lavitrinacoleccionistas.intercambiossoporte.controller;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -16,24 +14,18 @@ import py.com.lavitrinacoleccionistas.dto.IntercambioDTO;
 import py.com.lavitrinacoleccionistas.dto.IntercambioEstadoUpdateDTO;
 import py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO;
 import py.com.lavitrinacoleccionistas.enums.EstadoIntercambio;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.api.IIntercambioApi;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.service.IIntercambioService;
 
 @Slf4j
 @RestController
 @RequestMapping("/intercambios")
 @RequiredArgsConstructor
-@Tag(
-        name = "Intercambios",
-        description = "Operaciones para la gestión de intercambios entre usuarios"
-)
-public class IntercambioController {
+public class IntercambioController implements IIntercambioApi {
 
     private final IIntercambioService intercambioService;
 
-    @Operation(
-            summary = "Crear intercambio",
-            description = "Registra una nueva propuesta de intercambio entre dos usuarios."
-    )
+    @Override
     @PostMapping
     public ResponseEntity<IntercambioDTO> crear(
             @Valid @RequestBody IntercambioCreateDTO dto
@@ -51,16 +43,9 @@ public class IntercambioController {
                 .body(creado);
     }
 
-    @Operation(
-            summary = "Obtener intercambio por ID",
-            description = "Obtiene los datos de un intercambio activo mediante su identificador."
-    )
+    @Override
     @GetMapping("/{id}")
     public ResponseEntity<IntercambioDTO> obtenerPorId(
-            @Parameter(
-                    description = "Identificador del intercambio",
-                    example = "1"
-            )
             @PathVariable Long id
     ) {
         log.info(
@@ -73,25 +58,12 @@ public class IntercambioController {
         );
     }
 
-    @Operation(
-            summary = "Listar o buscar intercambios",
-            description = "Obtiene una lista paginada de intercambios activos. " +
-                    "Permite filtrar opcionalmente por usuario y estado."
-    )
+    @Override
     @GetMapping
     public ResponseEntity<Page<IntercambioDTO>> listar(
-            @Parameter(
-                    description = "Identificador del usuario, como proponente o receptor",
-                    example = "1"
-            )
             @RequestParam(required = false) Long idUsuario,
-
-            @Parameter(
-                    description = "Estado del intercambio"
-            )
             @RequestParam(required = false) EstadoIntercambio estado,
-
-            Pageable pageable
+            @ParameterObject Pageable pageable
     ) {
         log.info(
                 "Solicitud recibida para listar intercambios. Usuario: {}, estado: {}, página: {}, tamaño: {}",
@@ -110,18 +82,10 @@ public class IntercambioController {
         );
     }
 
-    @Operation(
-            summary = "Actualizar intercambio",
-            description = "Actualiza los datos y productos asociados a un intercambio existente."
-    )
+    @Override
     @PutMapping("/{id}")
     public ResponseEntity<IntercambioDTO> actualizar(
-            @Parameter(
-                    description = "Identificador del intercambio",
-                    example = "1"
-            )
             @PathVariable Long id,
-
             @Valid @RequestBody IntercambioUpdateDTO dto
     ) {
         log.info(
@@ -134,18 +98,10 @@ public class IntercambioController {
         );
     }
 
-    @Operation(
-            summary = "Actualizar estado del intercambio",
-            description = "Modifica el estado de un intercambio existente."
-    )
+    @Override
     @PatchMapping("/{id}/estado")
     public ResponseEntity<IntercambioDTO> actualizarEstado(
-            @Parameter(
-                    description = "Identificador del intercambio",
-                    example = "1"
-            )
             @PathVariable Long id,
-
             @Valid @RequestBody IntercambioEstadoUpdateDTO dto
     ) {
         log.info(
@@ -159,16 +115,9 @@ public class IntercambioController {
         );
     }
 
-    @Operation(
-            summary = "Eliminar intercambio",
-            description = "Realiza la eliminación lógica del intercambio, marcándolo como inactivo."
-    )
+    @Override
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(
-            @Parameter(
-                    description = "Identificador del intercambio",
-                    example = "1"
-            )
             @PathVariable Long id
     ) {
         log.info(
