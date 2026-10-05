@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioDTO;
-import py.com.lavitrinacoleccionistas.intercambiossoporte.api.IDetalleIntercambioApi;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.service.IDetalleIntercambioService;
 
 import java.util.List;
@@ -17,11 +16,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/intercambios/{idIntercambio}/detalles")
 @RequiredArgsConstructor
-public class DetalleIntercambioController implements IDetalleIntercambioApi {
+public class DetalleIntercambioController {
 
     private final IDetalleIntercambioService detalleIntercambioService;
 
-    @Override
     @GetMapping
     public ResponseEntity<List<DetalleIntercambioDTO>> listarPorIntercambio(
             @PathVariable Long idIntercambio

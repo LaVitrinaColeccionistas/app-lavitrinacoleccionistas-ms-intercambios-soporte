@@ -34,7 +34,3 @@ build/
 
 ### variables de entorno ###
 .env
-
-### Logs ###
-logs/
-*.log

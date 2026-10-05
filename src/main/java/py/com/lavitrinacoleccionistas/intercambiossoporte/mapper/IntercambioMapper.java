@@ -16,8 +16,9 @@ import java.time.ZoneId;
         componentModel = "spring",
         uses = DetalleIntercambioMapper.class
 )
-public interface IntercambioMapper {
+public interface IntercambioMapper extends BaseMapper<Intercambio, IntercambioDTO> {
 
+    @Override
     IntercambioDTO toDTO(Intercambio entity);
 
     @Mapping(target = "id", ignore = true)

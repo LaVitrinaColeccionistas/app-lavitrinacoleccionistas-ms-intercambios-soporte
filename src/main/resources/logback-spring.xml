@@ -2,14 +2,33 @@
 
 <configuration>
 
-    <property name="LOG_PATH" value="${LOG_PATH:-logs}"/>
-    <property name="LOG_FILE" value="${LOG_FILE:-intercambios-soporte.log}"/>
+    <!-- CONFIGURACIÓN EXTERNA -->
+    <property name="LOG_PATH"
+              value="${LOG_PATH:-logs}"/>
 
-    <property
-            name="LOG_PATTERN"
-            value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
-    />
+    <property name="LOG_FILE"
+              value="${LOG_FILE:-intercambios-soporte.log}"/>
 
+    <property name="LOG_LEVEL"
+              value="${LOG_LEVEL:-INFO}"/>
+
+    <property name="SQL_LOG_LEVEL"
+              value="${SQL_LOG_LEVEL:-DEBUG}"/>
+
+    <property name="LOG_MAX_FILE_SIZE"
+              value="${LOG_MAX_FILE_SIZE:-10MB}"/>
+
+    <property name="LOG_MAX_HISTORY"
+              value="${LOG_MAX_HISTORY:-30}"/>
+
+    <property name="LOG_TOTAL_SIZE_CAP"
+              value="${LOG_TOTAL_SIZE_CAP:-500MB}"/>
+
+    <property name="LOG_PATTERN"
+              value="${LOG_PATTERN:-%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n}"/>
+
+
+    <!-- CONSOLA -->
     <appender name="CONSOLE"
               class="ch.qos.logback.core.ConsoleAppender">
 
@@ -19,21 +38,24 @@
 
     </appender>
 
+
+    <!-- ARCHIVO -->
     <appender name="FILE"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
 
         <file>${LOG_PATH}/${LOG_FILE}</file>
 
-        <rollingPolicy
-                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 
             <fileNamePattern>
                 ${LOG_PATH}/intercambios-soporte-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
 
-            <maxFileSize>10MB</maxFileSize>
-            <maxHistory>30</maxHistory>
-            <totalSizeCap>500MB</totalSizeCap>
+            <maxFileSize>${LOG_MAX_FILE_SIZE}</maxFileSize>
+
+            <maxHistory>${LOG_MAX_HISTORY}</maxHistory>
+
+            <totalSizeCap>${LOG_TOTAL_SIZE_CAP}</totalSizeCap>
 
         </rollingPolicy>
 
@@ -43,17 +65,19 @@
 
     </appender>
 
-    <logger
-            name="py.com.lavitrinacoleccionistas.intercambiossoporte"
-            level="DEBUG"
-    />
 
-    <logger
-            name="org.hibernate.SQL"
-            level="DEBUG"
-    />
+    <!-- SQL / REPOSITORY -->
+    <logger name="org.hibernate.SQL"
+            level="${SQL_LOG_LEVEL}"/>
 
-    <root level="INFO">
+
+    <!-- APLICACIÓN -->
+    <logger name="py.com.lavitrinacoleccionistas.intercambiossoporte"
+            level="${LOG_LEVEL}"/>
+
+
+    <!-- ROOT -->
+    <root level="${LOG_LEVEL}">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
     </root>

@@ -1,0 +1,241 @@
+2026-10-05 00:07:19 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-05 00:07:20 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplicationTests - Starting AppLavitrinaMsIntercambiosSoporteApplicationTests using Java 25.0.4.1 with PID 9992 (started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-05 00:07:20 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-10-05 00:07:21 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-05 00:07:21 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 4 JPA repository interfaces.
+2026-10-05 00:07:21 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-05 00:07:22 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-05 00:07:22 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-05 00:07:23 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-05 00:07:24 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@609ad016
+2026-10-05 00:07:24 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-05 00:07:24 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-05 00:07:26 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-05 00:07:26 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-05 00:07:26 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-05 00:07:28 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplicationTests - Started AppLavitrinaMsIntercambiosSoporteApplicationTests in 9.007 seconds (process running for 11.367)
+2026-10-05 00:07:29 INFO  [main] p.c.l.i.service.AbstractBaseService - Realizando eliminación lógica de Intercambio con id: 1
+2026-10-05 00:07:29 INFO  [main] p.c.l.i.service.AbstractBaseService - Intercambio con id 1 marcado como inactivo
+2026-10-05 00:07:29 INFO  [main] p.c.l.i.service.AbstractBaseService - Realizando eliminación lógica de Intercambio con id: 50
+2026-10-05 00:07:29 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-05 00:07:29 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-05 00:07:30 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-05 00:09:56 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-05 00:09:56 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Starting AppLavitrinaMsIntercambiosSoporteApplication using Java 25.0.4.1 with PID 13628 (C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte\target\classes started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-05 00:09:56 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-05 00:09:57 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-05 00:09:57 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 4 JPA repository interfaces.
+2026-10-05 00:09:58 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-05 00:09:58 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-05 00:09:58 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-05 00:09:58 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-05 00:09:58 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1858 ms
+2026-10-05 00:09:58 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-05 00:09:58 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-05 00:09:59 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-05 00:09:59 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-05 00:10:00 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59c08cf1
+2026-10-05 00:10:00 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-05 00:10:01 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-05 00:10:03 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-05 00:10:03 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-05 00:10:03 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-05 00:10:04 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-05 00:10:04 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-10-05 00:10:04 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Started AppLavitrinaMsIntercambiosSoporteApplication in 8.838 seconds (process running for 9.649)
+2026-10-05 00:19:22 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-05 00:19:22 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-05 00:19:22 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 35 ms
+2026-10-05 00:19:22 INFO  [http-nio-8080-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-05 00:19:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo and 1=1 order by i1_0.id desc offset ? rows fetch first ? rows only
+2026-10-05 00:19:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:19:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:19:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:19:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:19:23 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:19:24 WARN  [http-nio-8080-exec-1] o.s.d.w.c.SpringDataJackson3Configuration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-10-05 00:20:12 INFO  [http-nio-8080-exec-2] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 6
+2026-10-05 00:20:13 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:20:13 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:20:39 INFO  [http-nio-8080-exec-3] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-05 00:20:39 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo and (i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and i1_0.estado=? order by i1_0.id desc offset ? rows fetch first ? rows only
+2026-10-05 00:20:39 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:20:39 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:20:39 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:20:52 INFO  [http-nio-8080-exec-4] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-05 00:20:52 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo and (i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and i1_0.estado=? order by i1_0.id desc offset ? rows fetch first ? rows only
+2026-10-05 00:20:52 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:20:52 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:20:52 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:21:36 INFO  [http-nio-8080-exec-5] p.c.l.i.c.IntercambioController - Solicitud recibida para crear intercambio. Proponente: 1, receptor: 2
+2026-10-05 00:21:36 INFO  [http-nio-8080-exec-5] p.c.l.i.s.IntercambioServiceImpl - Creando intercambio entre usuario 1 y usuario 2
+2026-10-05 00:21:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-05 00:21:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-05 00:21:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - insert into intercambio (activo,diferencia_dinero,estado,fecha_actualizacion,fecha_creacion,id_usuario_proponente,id_usuario_receptor,usuario_paga_diferencia) values (?,?,?,?,?,?,?,?)
+2026-10-05 00:21:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-05 00:21:36 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-05 00:21:36 INFO  [http-nio-8080-exec-5] p.c.l.i.s.IntercambioServiceImpl - Intercambio creado con id: 8
+2026-10-05 00:22:03 INFO  [http-nio-8080-exec-6] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar intercambio con id: 8
+2026-10-05 00:22:03 INFO  [http-nio-8080-exec-6] p.c.l.i.s.IntercambioServiceImpl - Actualizando intercambio con id: 8
+2026-10-05 00:22:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:22:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-05 00:22:04 INFO  [http-nio-8080-exec-6] p.c.l.i.s.IntercambioServiceImpl - Intercambio actualizado con id: 8
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-05 00:22:04 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-05 00:22:31 INFO  [http-nio-8080-exec-10] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar estado del intercambio 8 a ACEPTADO
+2026-10-05 00:22:31 INFO  [http-nio-8080-exec-10] p.c.l.i.s.IntercambioServiceImpl - Actualizando estado del intercambio 8 a ACEPTADO
+2026-10-05 00:22:31 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:22:31 INFO  [http-nio-8080-exec-10] p.c.l.i.s.IntercambioServiceImpl - Estado del intercambio 8 actualizado a ACEPTADO
+2026-10-05 00:22:31 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-05 00:22:31 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-05 00:22:42 ERROR [http-nio-8080-exec-8] p.c.l.i.e.GlobalExceptionHandler - Error interno no controlado
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PATCH' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:260)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:376)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:116)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:544)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1157)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:951)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:877)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-05 00:22:48 INFO  [http-nio-8080-exec-9] p.c.l.i.c.DetalleIntercambioController - Solicitud recibida para listar detalles del intercambio con id: 8
+2026-10-05 00:22:48 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:22:48 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - select di1_0.id,di1_0.cantidad,di1_0.id_intercambio,di1_0.nombre_producto_snapshot,di1_0.id_producto,di1_0.tipo_movimiento from detalle_intercambio di1_0 where di1_0.id_intercambio=?
+2026-10-05 00:23:05 INFO  [http-nio-8080-exec-7] p.c.l.i.controller.BaseController - Solicitud recibida para eliminar lógicamente registro con id: 8
+2026-10-05 00:23:06 INFO  [http-nio-8080-exec-7] p.c.l.i.service.AbstractBaseService - Realizando eliminación lógica de Intercambio con id: 8
+2026-10-05 00:23:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:23:06 INFO  [http-nio-8080-exec-7] p.c.l.i.service.AbstractBaseService - Intercambio con id 8 marcado como inactivo
+2026-10-05 00:23:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-05 00:23:14 INFO  [http-nio-8080-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para eliminar lógicamente registro con id: 8
+2026-10-05 00:23:14 INFO  [http-nio-8080-exec-1] p.c.l.i.service.AbstractBaseService - Realizando eliminación lógica de Intercambio con id: 8
+2026-10-05 00:23:14 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:23:14 WARN  [http-nio-8080-exec-1] p.c.l.i.e.GlobalExceptionHandler - Recurso no encontrado: Intercambio no encontrado con id: 8
+2026-10-05 00:23:24 INFO  [http-nio-8080-exec-2] p.c.l.i.c.TicketSoporteController - Solicitud recibida para listar tickets de soporte. Página: 0, tamaño: 20
+2026-10-05 00:23:24 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - select ts1_0.id,ts1_0.asunto,ts1_0.email,ts1_0.fecha_envio,ts1_0.mensaje,ts1_0.nombre from ticket_soporte ts1_0 offset ? rows fetch first ? rows only
+2026-10-05 00:23:53 INFO  [http-nio-8080-exec-3] p.c.l.i.c.TicketSoporteController - Solicitud recibida para crear ticket de soporte. Asunto: Consulta sobre intercambios
+2026-10-05 00:23:53 INFO  [http-nio-8080-exec-3] p.c.l.i.s.TicketSoporteServiceImpl - Iniciando creación de ticket de soporte. Asunto: Consulta sobre intercambios
+2026-10-05 00:23:53 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - insert into ticket_soporte (asunto,email,fecha_envio,mensaje,nombre) values (?,?,?,?,?)
+2026-10-05 00:23:53 INFO  [http-nio-8080-exec-3] p.c.l.i.s.TicketSoporteServiceImpl - Ticket de soporte creado correctamente con id: 7
+2026-10-05 00:24:01 INFO  [http-nio-8080-exec-4] p.c.l.i.c.TicketSoporteController - Solicitud recibida para crear ticket de soporte. Asunto: Consulta sobre intercambios
+2026-10-05 00:24:01 INFO  [http-nio-8080-exec-4] p.c.l.i.s.TicketSoporteServiceImpl - Iniciando creación de ticket de soporte. Asunto: Consulta sobre intercambios
+2026-10-05 00:24:01 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - insert into ticket_soporte (asunto,email,fecha_envio,mensaje,nombre) values (?,?,?,?,?)
+2026-10-05 00:24:01 INFO  [http-nio-8080-exec-4] p.c.l.i.s.TicketSoporteServiceImpl - Ticket de soporte creado correctamente con id: 8
+2026-10-05 00:24:08 ERROR [http-nio-8080-exec-5] p.c.l.i.e.GlobalExceptionHandler - Error interno no controlado
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:260)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:376)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:116)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:544)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1157)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:951)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-05 00:24:13 INFO  [http-nio-8080-exec-6] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 999999
+2026-10-05 00:24:13 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:24:13 WARN  [http-nio-8080-exec-6] p.c.l.i.e.GlobalExceptionHandler - Recurso no encontrado: Intercambio no encontrado con id: 999999
+2026-10-05 00:24:19 INFO  [http-nio-8080-exec-10] p.c.l.i.c.TicketSoporteController - Solicitud recibida para listar tickets de soporte. Página: 0, tamaño: 10
+2026-10-05 00:24:19 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - select ts1_0.id,ts1_0.asunto,ts1_0.email,ts1_0.fecha_envio,ts1_0.mensaje,ts1_0.nombre from ticket_soporte ts1_0 offset ? rows fetch first ? rows only
+2026-10-05 00:24:33 INFO  [http-nio-8080-exec-8] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 999999
+2026-10-05 00:24:33 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-05 00:24:34 WARN  [http-nio-8080-exec-8] p.c.l.i.e.GlobalExceptionHandler - Recurso no encontrado: Intercambio no encontrado con id: 999999
+2026-10-05 00:24:57 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-05 00:24:57 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-05 00:24:57 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-05 00:24:57 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-05 00:24:57 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

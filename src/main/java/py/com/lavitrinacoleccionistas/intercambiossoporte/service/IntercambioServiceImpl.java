@@ -1,9 +1,9 @@
 package py.com.lavitrinacoleccionistas.intercambiossoporte.service;
 
+import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioCreateDTO;
@@ -16,20 +16,98 @@ import py.com.lavitrinacoleccionistas.entity.Intercambio;
 import py.com.lavitrinacoleccionistas.entity.Producto;
 import py.com.lavitrinacoleccionistas.enums.EstadoIntercambio;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.exception.ResourceNotFoundException;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.filter.IntercambioFilter;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.BaseMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.DetalleIntercambioMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.IntercambioMapper;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IBaseRepository;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class IntercambioServiceImpl implements IIntercambioService {
+public class IntercambioServiceImpl
+        extends AbstractBaseService<Intercambio, IntercambioDTO, IntercambioFilter>
+        implements IIntercambioService {
 
     private final IIntercambioRepository intercambioRepository;
     private final IProductoRepository productoRepository;
     private final IntercambioMapper intercambioMapper;
     private final DetalleIntercambioMapper detalleIntercambioMapper;
+
+    // ---- Puntos de extensión de AbstractBaseService ----
+
+    @Override
+    protected IBaseRepository<Intercambio> getRepository() {
+        return intercambioRepository;
+    }
+
+    @Override
+    protected BaseMapper<Intercambio, IntercambioDTO> getMapper() {
+        return intercambioMapper;
+    }
+
+    @Override
+    protected String getEntityName() {
+        return "Intercambio";
+    }
+
+    @Override
+    protected Optional<Intercambio> findActiveById(Long id) {
+        return intercambioRepository.findByIdAndActivoTrue(id);
+    }
+
+    @Override
+    protected Specification<Intercambio> activeSpecification() {
+        return (root, query, cb) -> cb.isTrue(root.get("activo"));
+    }
+
+    @Override
+    protected Specification<Intercambio> filterSpecification(IntercambioFilter filter) {
+        return (root, query, cb) -> {
+            List<Predicate> predicates = new ArrayList<>();
+
+            if (filter.getIdUsuario() != null) {
+                predicates.add(cb.or(
+                        cb.equal(root.get("idUsuarioProponente"), filter.getIdUsuario()),
+                        cb.equal(root.get("idUsuarioReceptor"), filter.getIdUsuario())
+                ));
+            }
+
+            if (filter.getEstado() != null) {
+                predicates.add(cb.equal(root.get("estado"), filter.getEstado()));
+            }
+
+            if (filter.getFechaDesde() != null) {
+                predicates.add(cb.greaterThanOrEqualTo(
+                        root.<LocalDateTime>get("fechaCreacion"),
+                        filter.getFechaDesde().atStartOfDay()
+                ));
+            }
+
+            if (filter.getFechaHasta() != null) {
+                predicates.add(cb.lessThan(
+                        root.<LocalDateTime>get("fechaCreacion"),
+                        filter.getFechaHasta().plusDays(1).atStartOfDay()
+                ));
+            }
+
+            return cb.and(predicates.toArray(new Predicate[0]));
+        };
+    }
+
+    @Override
+    protected void deactivate(Intercambio intercambio) {
+        intercambio.setActivo(false);
+    }
+
+    // ---- Operaciones con DTOs de entrada propios ----
 
     @Override
     @Transactional
@@ -53,42 +131,11 @@ public class IntercambioServiceImpl implements IIntercambioService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public IntercambioDTO obtenerPorId(Long id) {
-        log.debug("Buscando intercambio activo con id: {}", id);
-
-        Intercambio intercambio = obtenerIntercambioActivo(id);
-
-        return intercambioMapper.toDTO(intercambio);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Page<IntercambioDTO> buscar(
-            Long idUsuario,
-            EstadoIntercambio estado,
-            Pageable pageable
-    ) {
-        log.debug(
-                "Buscando intercambios activos. Usuario: {}, estado: {}",
-                idUsuario,
-                estado
-        );
-
-        return intercambioRepository
-                .buscarActivos(idUsuario, estado, pageable)
-                .map(intercambioMapper::toDTO);
-    }
-
-    @Override
     @Transactional
-    public IntercambioDTO actualizar(
-            Long id,
-            IntercambioUpdateDTO dto
-    ) {
+    public IntercambioDTO actualizar(Long id, IntercambioUpdateDTO dto) {
         log.info("Actualizando intercambio con id: {}", id);
 
-        Intercambio intercambio = obtenerIntercambioActivo(id);
+        Intercambio intercambio = findActiveEntity(id);
 
         intercambioMapper.updateEntity(dto, intercambio);
 
@@ -114,7 +161,7 @@ public class IntercambioServiceImpl implements IIntercambioService {
                 dto.getEstado()
         );
 
-        Intercambio intercambio = obtenerIntercambioActivo(id);
+        Intercambio intercambio = findActiveEntity(id);
 
         intercambio.setEstado(
                 EstadoIntercambio.valueOf(dto.getEstado().name())
@@ -129,29 +176,6 @@ public class IntercambioServiceImpl implements IIntercambioService {
         );
 
         return intercambioMapper.toDTO(actualizado);
-    }
-
-    @Override
-    @Transactional
-    public void eliminar(Long id) {
-        log.info("Realizando eliminación lógica del intercambio con id: {}", id);
-
-        Intercambio intercambio = obtenerIntercambioActivo(id);
-
-        intercambio.setActivo(false);
-        intercambioRepository.save(intercambio);
-
-        log.info("Intercambio con id {} marcado como inactivo", id);
-    }
-
-    private Intercambio obtenerIntercambioActivo(Long id) {
-        return intercambioRepository
-                .findByIdAndActivoTrue(id)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException(
-                                "Intercambio no encontrado con id: " + id
-                        )
-                );
     }
 
     private void agregarDetalles(

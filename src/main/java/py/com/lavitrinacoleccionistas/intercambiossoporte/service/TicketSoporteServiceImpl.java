@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteCreateDTO;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteDTO;
 import py.com.lavitrinacoleccionistas.entity.TicketSoporte;
-import py.com.lavitrinacoleccionistas.intercambiossoporte.exception.ResourceNotFoundException;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.TicketSoporteMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository;
 
