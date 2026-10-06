@@ -11,7 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 import py.com.lavitrinacoleccionistas.dto.IntercambioDTO;
 import py.com.lavitrinacoleccionistas.entity.Intercambio;
 import py.com.lavitrinacoleccionistas.enums.EstadoIntercambio;
@@ -26,8 +25,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -64,24 +62,28 @@ class IntercambioServiceImplTest {
     @Test
     void getById_debeRetornarIntercambioCuandoExiste() {
 
-        when(intercambioRepository.findByIdAndActivoTrue(1L))
+        when(intercambioRepository.buscarActivoPorId(1L))
                 .thenReturn(Optional.of(intercambio));
 
         when(intercambioMapper.toDTO(intercambio))
                 .thenReturn(intercambioDTO);
 
-        IntercambioDTO resultado = intercambioService.getById(1L);
+        IntercambioDTO resultado =
+                intercambioService.getById(1L);
 
         assertSame(intercambioDTO, resultado);
 
-        verify(intercambioRepository).findByIdAndActivoTrue(1L);
-        verify(intercambioMapper).toDTO(intercambio);
+        verify(intercambioRepository)
+                .buscarActivoPorId(1L);
+
+        verify(intercambioMapper)
+                .toDTO(intercambio);
     }
 
     @Test
     void getById_debeLanzarExcepcionCuandoNoExiste() {
 
-        when(intercambioRepository.findByIdAndActivoTrue(99L))
+        when(intercambioRepository.buscarActivoPorId(99L))
                 .thenReturn(Optional.empty());
 
         ResourceNotFoundException excepcion =
@@ -101,22 +103,27 @@ class IntercambioServiceImplTest {
     @Test
     void delete_debeRealizarBorradoLogico() {
 
-        when(intercambioRepository.findByIdAndActivoTrue(1L))
+        when(intercambioRepository.buscarActivoPorId(1L))
                 .thenReturn(Optional.of(intercambio));
 
         intercambioService.delete(1L);
 
         assertFalse(intercambio.getActivo());
 
-        verify(intercambioRepository).save(intercambio);
-        verify(intercambioRepository, never()).delete(any(Intercambio.class));
-        verify(intercambioRepository, never()).deleteById(anyLong());
+        verify(intercambioRepository)
+                .save(intercambio);
+
+        verify(intercambioRepository, never())
+                .delete(any(Intercambio.class));
+
+        verify(intercambioRepository, never())
+                .deleteById(anyLong());
     }
 
     @Test
     void delete_debeLanzarExcepcionCuandoIntercambioNoExiste() {
 
-        when(intercambioRepository.findByIdAndActivoTrue(50L))
+        when(intercambioRepository.buscarActivoPorId(50L))
                 .thenReturn(Optional.empty());
 
         assertThrows(
@@ -124,27 +131,38 @@ class IntercambioServiceImplTest {
                 () -> intercambioService.delete(50L)
         );
 
-        verify(intercambioRepository, never()).save(any());
-        verify(intercambioRepository, never()).deleteById(anyLong());
+        verify(intercambioRepository, never())
+                .save(any());
+
+        verify(intercambioRepository, never())
+                .deleteById(anyLong());
     }
 
     @Test
-    @SuppressWarnings("unchecked")
     void getByFilter_debeAplicarFiltrosYPaginacion() {
 
         IntercambioFilter filtro = new IntercambioFilter();
+
         filtro.setIdUsuario(1L);
         filtro.setEstado(EstadoIntercambio.PROPUESTO);
         filtro.setPage(0);
         filtro.setSize(10);
 
-        Pageable pageable = PageRequest.of(0, 10);
+        Pageable pageableEsperado =
+                PageRequest.of(0, 10);
 
         Page<Intercambio> pagina =
-                new PageImpl<>(List.of(intercambio), pageable, 1);
+                new PageImpl<>(
+                        List.of(intercambio),
+                        pageableEsperado,
+                        1
+                );
 
-        when(intercambioRepository.findAll(
-                any(Specification.class),
+        when(intercambioRepository.buscarConFiltros(
+                eq(1L),
+                eq(EstadoIntercambio.PROPUESTO),
+                isNull(),
+                isNull(),
                 any(Pageable.class)
         )).thenReturn(pagina);
 
@@ -154,16 +172,39 @@ class IntercambioServiceImplTest {
         Page<IntercambioDTO> resultado =
                 intercambioService.getByFilter(filtro);
 
-        assertEquals(1, resultado.getTotalElements());
-        assertSame(intercambioDTO, resultado.getContent().getFirst());
+        assertEquals(
+                1,
+                resultado.getTotalElements()
+        );
+
+        assertSame(
+                intercambioDTO,
+                resultado.getContent().getFirst()
+        );
 
         ArgumentCaptor<Pageable> captor =
                 ArgumentCaptor.forClass(Pageable.class);
 
         verify(intercambioRepository)
-                .findAll(any(Specification.class), captor.capture());
+                .buscarConFiltros(
+                        eq(1L),
+                        eq(EstadoIntercambio.PROPUESTO),
+                        isNull(),
+                        isNull(),
+                        captor.capture()
+                );
 
-        assertEquals(0, captor.getValue().getPageNumber());
-        assertEquals(10, captor.getValue().getPageSize());
+        Pageable pageableReal =
+                captor.getValue();
+
+        assertEquals(
+                0,
+                pageableReal.getPageNumber()
+        );
+
+        assertEquals(
+                10,
+                pageableReal.getPageSize()
+        );
     }
 }

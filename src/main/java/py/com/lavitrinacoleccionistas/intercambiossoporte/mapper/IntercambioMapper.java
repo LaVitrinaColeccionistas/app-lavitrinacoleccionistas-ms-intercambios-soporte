@@ -8,15 +8,12 @@ import py.com.lavitrinacoleccionistas.dto.IntercambioDTO;
 import py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO;
 import py.com.lavitrinacoleccionistas.entity.Intercambio;
 
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
 
 @Mapper(
         componentModel = "spring",
         uses = DetalleIntercambioMapper.class
 )
-public interface IntercambioMapper extends BaseMapper<Intercambio, IntercambioDTO> {
+public interface IntercambioMapper extends BaseMapper<Intercambio, IntercambioDTO>, FechaMapper {
 
     @Override
     IntercambioDTO toDTO(Intercambio entity);
@@ -40,13 +37,4 @@ public interface IntercambioMapper extends BaseMapper<Intercambio, IntercambioDT
             @MappingTarget Intercambio entity
     );
 
-    default OffsetDateTime map(LocalDateTime value) {
-        if (value == null) {
-            return null;
-        }
-
-        return value
-                .atZone(ZoneId.systemDefault())
-                .toOffsetDateTime();
-    }
 }

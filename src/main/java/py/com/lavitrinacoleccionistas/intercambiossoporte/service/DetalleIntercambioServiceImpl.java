@@ -33,7 +33,7 @@ public class DetalleIntercambioServiceImpl
         );
 
         intercambioRepository
-                .findByIdAndActivoTrue(idIntercambio)
+                .buscarActivoPorId(idIntercambio)
                 .orElseThrow(() ->
                         new ResourceNotFoundException(
                                 "Intercambio no encontrado con id: "
@@ -42,7 +42,7 @@ public class DetalleIntercambioServiceImpl
                 );
 
         return detalleIntercambioRepository
-                .findByIntercambioId(idIntercambio)
+                .buscarPorIntercambio(idIntercambio)
                 .stream()
                 .map(detalleIntercambioMapper::toDTO)
                 .toList();

@@ -1,9 +1,10 @@
 package py.com.lavitrinacoleccionistas.intercambiossoporte.service;
 
-import jakarta.persistence.criteria.Predicate;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioCreateDTO;
@@ -25,7 +26,6 @@ import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambi
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,47 +60,48 @@ public class IntercambioServiceImpl
 
     @Override
     protected Optional<Intercambio> findActiveById(Long id) {
-        return intercambioRepository.findByIdAndActivoTrue(id);
+        return intercambioRepository.buscarActivoPorId(id);
     }
 
     @Override
-    protected Specification<Intercambio> activeSpecification() {
-        return (root, query, cb) -> cb.isTrue(root.get("activo"));
+    protected List<Intercambio> findAllActive(Sort sort) {
+        return intercambioRepository.buscarTodosActivos(sort);
     }
 
     @Override
-    protected Specification<Intercambio> filterSpecification(IntercambioFilter filter) {
-        return (root, query, cb) -> {
-            List<Predicate> predicates = new ArrayList<>();
+    protected Page<Intercambio> findAllFiltered(
+            IntercambioFilter filter,
+            Pageable pageable
+    ) {
+        LocalDateTime fechaDesde = filter.getFechaDesde() == null
+                ? null
+                : filter.getFechaDesde().atStartOfDay();
 
-            if (filter.getIdUsuario() != null) {
-                predicates.add(cb.or(
-                        cb.equal(root.get("idUsuarioProponente"), filter.getIdUsuario()),
-                        cb.equal(root.get("idUsuarioReceptor"), filter.getIdUsuario())
-                ));
-            }
+        LocalDateTime fechaHasta = filter.getFechaHasta() == null
+                ? null
+                : filter.getFechaHasta()
+                .plusDays(1)
+                .atStartOfDay();
 
-            if (filter.getEstado() != null) {
-                predicates.add(cb.equal(root.get("estado"), filter.getEstado()));
-            }
+        // Sin filtros
+        if (filter.getIdUsuario() == null
+                && filter.getEstado() == null
+                && fechaDesde == null
+                && fechaHasta == null) {
 
-            if (filter.getFechaDesde() != null) {
-                predicates.add(cb.greaterThanOrEqualTo(
-                        root.<LocalDateTime>get("fechaCreacion"),
-                        filter.getFechaDesde().atStartOfDay()
-                ));
-            }
+            return intercambioRepository.buscarTodosActivos(pageable);
+        }
 
-            if (filter.getFechaHasta() != null) {
-                predicates.add(cb.lessThan(
-                        root.<LocalDateTime>get("fechaCreacion"),
-                        filter.getFechaHasta().plusDays(1).atStartOfDay()
-                ));
-            }
-
-            return cb.and(predicates.toArray(new Predicate[0]));
-        };
+        // Con filtros
+        return intercambioRepository.buscarConFiltros(
+                filter.getIdUsuario(),
+                filter.getEstado(),
+                fechaDesde,
+                fechaHasta,
+                pageable
+        );
     }
+
 
     @Override
     protected void deactivate(Intercambio intercambio) {

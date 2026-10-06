@@ -10,9 +10,8 @@ El microservicio utiliza una arquitectura organizada por capas:
 - **Service:** contiene la lógica de negocio del microservicio.
 - **Repository:** gestiona el acceso a la base de datos mediante Spring Data JPA.
 - **Mapper:** realiza la conversión entre Entities y DTOs mediante MapStruct.
-- **Specification:** permite construir filtros dinámicos para la búsqueda de intercambios.
+- **Filter:** `PagedFilter` / `IntercambioFilter` con los parámetros de paginación y búsqueda.
 - **Exception:** centraliza el manejo de errores de la API.
-- **Config:** contiene la configuración de OpenAPI/Swagger.
 
 El flujo principal de las operaciones es:
 
@@ -56,7 +55,7 @@ Se implementan operaciones para:
 - Crear un intercambio.
 - Obtener un intercambio por ID.
 - Listar intercambios con paginación.
-- Buscar intercambios mediante filtros opcionales por usuario y estado.
+- Buscar intercambios mediante filtros opcionales por usuario, estado y rango de fechas.
 - Actualizar un intercambio.
 - Actualizar el estado de un intercambio.
 - Realizar eliminación lógica.
@@ -68,7 +67,6 @@ La eliminación mediante `DELETE` no elimina físicamente el registro de la base
 Se implementan operaciones para:
 
 - Listar los detalles asociados a un intercambio.
-- Agregar productos a un intercambio.
 
 ### Soporte
 
@@ -81,10 +79,11 @@ Se implementan operaciones para:
 
 Los listados utilizan `Page` y `Pageable` de Spring Data.
 
-La búsqueda de intercambios permite aplicar filtros opcionales mediante `Specification`, actualmente por:
+La búsqueda de intercambios permite aplicar filtros opcionales mediante una consulta JPQL, actualmente por:
 
 - Usuario participante.
 - Estado del intercambio.
+- Rango de fechas de creación.
 
 Los intercambios eliminados lógicamente no se incluyen en las consultas activas.
 
@@ -96,7 +95,9 @@ Se controlan, entre otros:
 
 - Recursos no encontrados.
 - Rutas inexistentes.
-- Errores de validación.
+- Errores de validación y cuerpos o parámetros inválidos (400).
+- Métodos HTTP no permitidos (405).
+- Violaciones de integridad de datos.
 - Errores internos no controlados.
 
 Las respuestas presentan mensajes controlados y evitan exponer detalles técnicos internos.
@@ -116,15 +117,7 @@ Los logs también se almacenan en archivos mediante la configuración definida e
 
 ## Swagger / OpenAPI
 
-Los endpoints REST se encuentran documentados mediante **Springdoc OpenAPI**.
-
-Se utilizan anotaciones como:
-
-- `@Tag`
-- `@Operation`
-- `@Parameter`
-
-Esto permite visualizar y probar la API desde Swagger UI.
+Springdoc OpenAPI expone `/v3/api-docs`, que consume el API Gateway para unificar la documentación de todos los microservicios.
 
 ## Anotaciones principales
 
@@ -145,7 +138,6 @@ Esto permite visualizar y probar la API desde Swagger UI.
 | `@RestControllerAdvice` | Centraliza el manejo de excepciones |
 | `@ExceptionHandler` | Gestiona excepciones específicas |
 | `@Slf4j` | Proporciona logging mediante SLF4J |
-| `@Tag`, `@Operation`, `@Parameter` | Documentación OpenAPI |
 
 ## Dependencias principales
 

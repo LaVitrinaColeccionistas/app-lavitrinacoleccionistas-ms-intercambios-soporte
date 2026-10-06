@@ -6,12 +6,8 @@ import py.com.lavitrinacoleccionistas.dto.TicketSoporteCreateDTO;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteDTO;
 import py.com.lavitrinacoleccionistas.entity.TicketSoporte;
 
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-
 @Mapper(componentModel = "spring")
-public interface TicketSoporteMapper {
+public interface TicketSoporteMapper extends FechaMapper {
 
     TicketSoporteDTO toDTO(TicketSoporte entity);
 
@@ -22,13 +18,4 @@ public interface TicketSoporteMapper {
     )
     TicketSoporte toEntity(TicketSoporteCreateDTO dto);
 
-    default OffsetDateTime map(LocalDateTime value) {
-        if (value == null) {
-            return null;
-        }
-
-        return value
-                .atZone(ZoneId.systemDefault())
-                .toOffsetDateTime();
-    }
 }
