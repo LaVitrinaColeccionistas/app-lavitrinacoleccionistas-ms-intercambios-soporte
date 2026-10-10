@@ -5,10 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioDTO;
-import py.com.lavitrinacoleccionistas.intercambiossoporte.exception.ResourceNotFoundException;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.DetalleIntercambioMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IDetalleIntercambioRepository;
-import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository;
 
 import java.util.List;
 
@@ -19,7 +17,6 @@ public class DetalleIntercambioServiceImpl
         implements IDetalleIntercambioService {
 
     private final IDetalleIntercambioRepository detalleIntercambioRepository;
-    private final IIntercambioRepository intercambioRepository;
     private final DetalleIntercambioMapper detalleIntercambioMapper;
 
     @Override
@@ -31,15 +28,6 @@ public class DetalleIntercambioServiceImpl
                 "Listando detalles del intercambio con id: {}",
                 idIntercambio
         );
-
-        intercambioRepository
-                .buscarActivoPorId(idIntercambio)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException(
-                                "Intercambio no encontrado con id: "
-                                        + idIntercambio
-                        )
-                );
 
         return detalleIntercambioRepository
                 .buscarPorIntercambio(idIntercambio)

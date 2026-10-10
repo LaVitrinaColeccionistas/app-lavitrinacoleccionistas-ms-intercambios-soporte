@@ -5,9 +5,10 @@ import org.mapstruct.Mapping;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteCreateDTO;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteDTO;
 import py.com.lavitrinacoleccionistas.entity.TicketSoporte;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.config.IBaseMapperConfig;
 
-@Mapper(componentModel = "spring")
-public interface TicketSoporteMapper extends FechaMapper {
+@Mapper(config = IBaseMapperConfig.class)
+public interface TicketSoporteMapper {
 
     TicketSoporteDTO toDTO(TicketSoporte entity);
 
@@ -17,5 +18,4 @@ public interface TicketSoporteMapper extends FechaMapper {
             expression = "java(java.time.LocalDateTime.now())"
     )
     TicketSoporte toEntity(TicketSoporteCreateDTO dto);
-
 }

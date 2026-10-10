@@ -1,9 +1,7 @@
 package py.com.lavitrinacoleccionistas.intercambiossoporte.exception;
 
-import java.time.LocalDateTime;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,157 +13,167 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
-import lombok.extern.slf4j.Slf4j;
+import java.time.LocalDateTime;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<Map<String, Object>> manejarResourceNotFound(
-            ResourceNotFoundException ex
+    public ResponseEntity<ApiError> handleNotFound(
+            ResourceNotFoundException ex,
+            HttpServletRequest req
     ) {
         log.warn("Recurso no encontrado: {}", ex.getMessage());
 
-        return construirRespuesta(
+        return build(
                 HttpStatus.NOT_FOUND,
                 "Recurso no encontrado",
                 ex.getMessage(),
-                null
-        );
-    }
-
-    @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<Map<String, Object>> manejarRutaNoEncontrada(
-            NoResourceFoundException ex
-    ) {
-        log.warn("Ruta no encontrada: {}", ex.getResourcePath());
-
-        return construirRespuesta(
-                HttpStatus.NOT_FOUND,
-                "Recurso no encontrado",
-                "La ruta solicitada no existe",
+                req,
                 null
         );
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String, Object>> manejarValidacion(
-            MethodArgumentNotValidException ex
+    public ResponseEntity<ApiError> handleValidation(
+            MethodArgumentNotValidException ex,
+            HttpServletRequest req
     ) {
-        Map<String, String> errores = new LinkedHashMap<>();
+        Map<String, String> errors = new LinkedHashMap<>();
 
         ex.getBindingResult()
                 .getFieldErrors()
                 .forEach(error ->
-                        errores.put(
+                        errors.put(
                                 error.getField(),
                                 error.getDefaultMessage()
                         )
                 );
 
-        log.warn("Error de validación en la solicitud: {}", errores);
+        log.warn("Error de validación: {}", errors);
 
-        return construirRespuesta(
+        return build(
                 HttpStatus.BAD_REQUEST,
                 "Datos inválidos",
                 "Uno o más campos de la solicitud son inválidos",
-                errores
-        );
-    }
-
-    @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<Map<String, Object>> manejarCuerpoInvalido(
-            HttpMessageNotReadableException ex
-    ) {
-        log.warn("Cuerpo de la solicitud ilegible: {}", ex.getMessage());
-
-        return construirRespuesta(
-                HttpStatus.BAD_REQUEST,
-                "Solicitud inválida",
-                "El cuerpo de la solicitud es inválido o tiene valores no permitidos",
-                null
+                req,
+                errors
         );
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public ResponseEntity<Map<String, Object>> manejarTipoInvalido(
-            MethodArgumentTypeMismatchException ex
+    public ResponseEntity<ApiError> handleTypeMismatch(
+            MethodArgumentTypeMismatchException ex,
+            HttpServletRequest req
     ) {
-        log.warn(
-                "Parámetro con tipo inválido: {} = {}",
-                ex.getName(),
-                ex.getValue()
-        );
-
-        return construirRespuesta(
+        return build(
                 HttpStatus.BAD_REQUEST,
                 "Parámetro inválido",
                 "El parámetro '" + ex.getName() + "' tiene un valor inválido",
+                req,
+                null
+        );
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiError> handleUnreadable(
+            HttpMessageNotReadableException ex,
+            HttpServletRequest req
+    ) {
+        return build(
+                HttpStatus.BAD_REQUEST,
+                "Solicitud inválida",
+                "El cuerpo de la solicitud es inválido o tiene valores no permitidos",
+                req,
                 null
         );
     }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-    public ResponseEntity<Map<String, Object>> manejarMetodoNoPermitido(
-            HttpRequestMethodNotSupportedException ex
+    public ResponseEntity<ApiError> handleMethodNotAllowed(
+            HttpRequestMethodNotSupportedException ex,
+            HttpServletRequest req
     ) {
-        log.warn("Método HTTP no permitido: {}", ex.getMethod());
-
-        return construirRespuesta(
+        return build(
                 HttpStatus.METHOD_NOT_ALLOWED,
                 "Método no permitido",
                 "El método HTTP no está permitido para esta ruta",
+                req,
+                null
+        );
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<ApiError> handleRouteNotFound(
+            NoResourceFoundException ex,
+            HttpServletRequest req
+    ) {
+        return build(
+                HttpStatus.NOT_FOUND,
+                "Recurso no encontrado",
+                "La ruta solicitada no existe",
+                req,
                 null
         );
     }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<Map<String, Object>> manejarIntegridadDatos(
-            DataIntegrityViolationException ex
+    public ResponseEntity<ApiError> handleDataIntegrity(
+            DataIntegrityViolationException ex,
+            HttpServletRequest req
     ) {
-        // El detalle técnico (SQL, constraints) solo se registra, no se expone
         log.warn("Violación de integridad de datos", ex);
 
-        return construirRespuesta(
+        return build(
                 HttpStatus.BAD_REQUEST,
                 "Datos inválidos",
                 "Los datos enviados no cumplen las restricciones requeridas",
+                req,
                 null
         );
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, Object>> manejarExcepcionGeneral(
-            Exception ex
+    public ResponseEntity<ApiError> handleGeneric(
+            Exception ex,
+            HttpServletRequest req
     ) {
-        log.error("Error interno no controlado", ex);
+        log.error(
+                "Error interno no controlado en {}",
+                req.getRequestURI(),
+                ex
+        );
 
-        return construirRespuesta(
+        return build(
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 "Error interno del servidor",
                 "Ocurrió un error inesperado",
+                req,
                 null
         );
     }
 
-    private ResponseEntity<Map<String, Object>> construirRespuesta(
+    private ResponseEntity<ApiError> build(
             HttpStatus status,
             String error,
-            String mensaje,
-            Map<String, String> errores
+            String message,
+            HttpServletRequest req,
+            Map<String, String> errors
     ) {
-        Map<String, Object> respuesta = new LinkedHashMap<>();
+        ApiError response = new ApiError(
+                LocalDateTime.now(),
+                status.value(),
+                error,
+                message,
+                req.getRequestURI(),
+                errors
+        );
 
-        respuesta.put("timestamp", LocalDateTime.now());
-        respuesta.put("status", status.value());
-        respuesta.put("error", error);
-        respuesta.put("message", mensaje);
-
-        if (errores != null) {
-            respuesta.put("errors", errores);
-        }
-
-        return ResponseEntity.status(status).body(respuesta);
+        return ResponseEntity
+                .status(status)
+                .body(response);
     }
 }

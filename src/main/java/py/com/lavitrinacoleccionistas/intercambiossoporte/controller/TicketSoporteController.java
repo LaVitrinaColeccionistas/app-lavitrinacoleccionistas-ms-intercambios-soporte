@@ -3,6 +3,7 @@ package py.com.lavitrinacoleccionistas.intercambiossoporte.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class TicketSoporteController {
 
     @GetMapping
     public ResponseEntity<Page<TicketSoporteDTO>> listar(
-            Pageable pageable
+            @ParameterObject Pageable pageable
     ) {
         log.info(
                 "Solicitud recibida para listar tickets de soporte. Página: {}, tamaño: {}",

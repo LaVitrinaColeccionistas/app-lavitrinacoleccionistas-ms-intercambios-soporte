@@ -13,7 +13,6 @@ import py.com.lavitrinacoleccionistas.intercambiossoporte.filter.PagedFilter;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.BaseMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IBaseRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -28,6 +27,12 @@ public abstract class AbstractBaseService<
     @Value("${spring.data.web.pageable.max-page-size:100}")
     private int maxPageSize = 100;
 
+    @Value("${app.pagination.sort-field:id}")
+    private String sortField;
+
+    @Value("${app.pagination.sort-direction:DESC}")
+    private Sort.Direction sortDirection;
+
     protected abstract IBaseRepository<E> getRepository();
 
     protected abstract BaseMapper<E, D> getMapper();
@@ -35,8 +40,6 @@ public abstract class AbstractBaseService<
     protected abstract String getEntityName();
 
     protected abstract Optional<E> findActiveById(Long id);
-
-    protected abstract List<E> findAllActive(Sort sort);
 
     protected abstract Page<E> findAllFiltered(
             F filter,
@@ -74,21 +77,6 @@ public abstract class AbstractBaseService<
                 getEntityName(),
                 id
         );
-    }
-
-    @Transactional(readOnly = true)
-    public List<D> getAll() {
-        log.debug(
-                "Listando todos los registros activos de {}",
-                getEntityName()
-        );
-
-        return findAllActive(
-                Sort.by(Sort.Direction.DESC, "id")
-        )
-                .stream()
-                .map(getMapper()::toDTO)
-                .toList();
     }
 
     @Transactional(readOnly = true)
@@ -131,7 +119,7 @@ public abstract class AbstractBaseService<
         return PageRequest.of(
                 page,
                 size,
-                Sort.by(Sort.Direction.DESC, "id")
+                Sort.by(sortDirection, sortField)
         );
     }
 }

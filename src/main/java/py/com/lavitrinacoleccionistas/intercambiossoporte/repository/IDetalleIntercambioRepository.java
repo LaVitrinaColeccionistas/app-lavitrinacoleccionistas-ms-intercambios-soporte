@@ -15,6 +15,7 @@ public interface IDetalleIntercambioRepository
         SELECT d
         FROM DetalleIntercambio d
         WHERE d.intercambio.id = :idIntercambio
+          AND d.intercambio.activo = true
         """)
     List<DetalleIntercambio> buscarPorIntercambio(
             @Param("idIntercambio") Long idIntercambio

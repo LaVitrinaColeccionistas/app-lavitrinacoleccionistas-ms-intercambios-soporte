@@ -2,7 +2,6 @@ package py.com.lavitrinacoleccionistas.intercambiossoporte.repository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -10,7 +9,6 @@ import py.com.lavitrinacoleccionistas.entity.Intercambio;
 import py.com.lavitrinacoleccionistas.enums.EstadoIntercambio;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -26,13 +24,6 @@ public interface IIntercambioRepository
     Optional<Intercambio> buscarActivoPorId(
             @Param("id") Long id
     );
-
-    @Query("""
-        SELECT i
-        FROM Intercambio i
-        WHERE i.activo = true
-        """)
-    List<Intercambio> buscarTodosActivos(Sort sort);
 
     @Query("""
     SELECT i

@@ -2,7 +2,6 @@ package py.com.lavitrinacoleccionistas.intercambiossoporte.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,6 @@ import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambi
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -40,8 +38,6 @@ public class IntercambioServiceImpl
     private final IProductoRepository productoRepository;
     private final IntercambioMapper intercambioMapper;
     private final DetalleIntercambioMapper detalleIntercambioMapper;
-
-    // ---- Puntos de extensión de AbstractBaseService ----
 
     @Override
     protected IBaseRepository<Intercambio> getRepository() {
@@ -61,11 +57,6 @@ public class IntercambioServiceImpl
     @Override
     protected Optional<Intercambio> findActiveById(Long id) {
         return intercambioRepository.buscarActivoPorId(id);
-    }
-
-    @Override
-    protected List<Intercambio> findAllActive(Sort sort) {
-        return intercambioRepository.buscarTodosActivos(sort);
     }
 
     @Override
@@ -107,8 +98,6 @@ public class IntercambioServiceImpl
     protected void deactivate(Intercambio intercambio) {
         intercambio.setActivo(false);
     }
-
-    // ---- Operaciones con DTOs de entrada propios ----
 
     @Override
     @Transactional

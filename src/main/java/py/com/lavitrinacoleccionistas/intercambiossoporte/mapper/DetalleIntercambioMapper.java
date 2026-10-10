@@ -5,8 +5,9 @@ import org.mapstruct.Mapping;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioCreateDTO;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioDTO;
 import py.com.lavitrinacoleccionistas.entity.DetalleIntercambio;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.config.IBaseMapperConfig;
 
-@Mapper(componentModel = "spring")
+@Mapper(config = IBaseMapperConfig.class)
 public interface DetalleIntercambioMapper {
 
     @Mapping(target = "idIntercambio", source = "intercambio.id")

@@ -7,13 +7,14 @@ import py.com.lavitrinacoleccionistas.dto.IntercambioCreateDTO;
 import py.com.lavitrinacoleccionistas.dto.IntercambioDTO;
 import py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO;
 import py.com.lavitrinacoleccionistas.entity.Intercambio;
-
+import py.com.lavitrinacoleccionistas.intercambiossoporte.config.IBaseMapperConfig;
 
 @Mapper(
-        componentModel = "spring",
+        config = IBaseMapperConfig.class,
         uses = DetalleIntercambioMapper.class
 )
-public interface IntercambioMapper extends BaseMapper<Intercambio, IntercambioDTO>, FechaMapper {
+public interface IntercambioMapper
+        extends BaseMapper<Intercambio, IntercambioDTO> {
 
     @Override
     IntercambioDTO toDTO(Intercambio entity);
@@ -36,5 +37,4 @@ public interface IntercambioMapper extends BaseMapper<Intercambio, IntercambioDT
             IntercambioUpdateDTO dto,
             @MappingTarget Intercambio entity
     );
-
 }
