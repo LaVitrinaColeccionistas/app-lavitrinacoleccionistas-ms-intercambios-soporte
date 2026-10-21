@@ -23,9 +23,15 @@ import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.IntercambioMapp
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IBaseRepository;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 
 @Service
 @RequiredArgsConstructor
@@ -38,6 +44,13 @@ public class IntercambioServiceImpl
     private final IProductoRepository productoRepository;
     private final IntercambioMapper intercambioMapper;
     private final DetalleIntercambioMapper detalleIntercambioMapper;
+    private final CacheManager cacheManager;
+
+    @Override
+    @Cacheable(value = "intercambios", key = "#id")
+    public IntercambioDTO getById(Long id) {
+        return super.getById(id);
+    }
 
     @Override
     protected IBaseRepository<Intercambio> getRepository() {
@@ -121,6 +134,7 @@ public class IntercambioServiceImpl
     }
 
     @Override
+    @CachePut(value = "intercambios", key = "#id")
     @Transactional
     public IntercambioDTO actualizar(Long id, IntercambioUpdateDTO dto) {
         log.info("Actualizando intercambio con id: {}", id);
@@ -140,6 +154,7 @@ public class IntercambioServiceImpl
     }
 
     @Override
+    @CachePut(value = "intercambios", key = "#id")
     @Transactional
     public IntercambioDTO actualizarEstado(
             Long id,
@@ -192,5 +207,29 @@ public class IntercambioServiceImpl
 
             intercambio.getDetalles().add(detalle);
         }
+    }
+
+    @Override
+    @CacheEvict(value = "intercambios", key = "#id")
+    public void delete(Long id) {
+        super.delete(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<IntercambioDTO> getByFilter(IntercambioFilter filter) {
+
+        Page<IntercambioDTO> intercambios = super.getByFilter(filter);
+
+        Cache cache = cacheManager.getCache("intercambios");
+
+        if (cache != null) {
+            intercambios.getContent().forEach(intercambio -> {
+                cache.put(intercambio.getId(), intercambio);
+                log.debug("CACHE SET intercambios::{}", intercambio.getId());
+            });
+        }
+
+        return intercambios;
     }
 }

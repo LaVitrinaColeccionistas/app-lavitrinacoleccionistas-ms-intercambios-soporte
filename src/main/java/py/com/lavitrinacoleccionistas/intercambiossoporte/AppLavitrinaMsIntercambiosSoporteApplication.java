@@ -5,8 +5,10 @@ import io.swagger.v3.oas.annotations.servers.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
+@EnableCaching
 @EntityScan(basePackages = "py.com.lavitrinacoleccionistas.entity")
 @OpenAPIDefinition(servers = @Server(url = "/api"))
 public class AppLavitrinaMsIntercambiosSoporteApplication {

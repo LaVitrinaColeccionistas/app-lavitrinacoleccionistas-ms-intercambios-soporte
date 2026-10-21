@@ -11,6 +11,9 @@ import py.com.lavitrinacoleccionistas.dto.TicketSoporteDTO;
 import py.com.lavitrinacoleccionistas.entity.TicketSoporte;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.mapper.TicketSoporteMapper;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 
 @Slf4j
 @Service
@@ -19,8 +22,10 @@ public class TicketSoporteServiceImpl implements ITicketSoporteService {
 
     private final ITicketSoporteRepository ticketSoporteRepository;
     private final TicketSoporteMapper ticketSoporteMapper;
+    private final CacheManager cacheManager;
 
     @Override
+    @CachePut(value = "tickets", key = "#result.id")
     @Transactional
     public TicketSoporteDTO crear(TicketSoporteCreateDTO dto) {
 
@@ -47,23 +52,20 @@ public class TicketSoporteServiceImpl implements ITicketSoporteService {
     @Transactional(readOnly = true)
     public Page<TicketSoporteDTO> listar(Pageable pageable) {
 
-        log.debug(
-                "Listando tickets de soporte. Página: {}, tamaño: {}",
-                pageable.getPageNumber(),
-                pageable.getPageSize()
-        );
+        Page<TicketSoporteDTO> tickets = ticketSoporteRepository
+                .findAll(pageable)
+                .map(ticketSoporteMapper::toDTO);
 
-        Page<TicketSoporteDTO> tickets =
-                ticketSoporteRepository
-                        .findAll(pageable)
-                        .map(ticketSoporteMapper::toDTO);
+        Cache cache = cacheManager.getCache("tickets");
 
-        log.debug(
-                "Se encontraron {} tickets en la página {}",
-                tickets.getNumberOfElements(),
-                tickets.getNumber()
-        );
+        if (cache != null) {
+            tickets.getContent().forEach(ticket -> {
+                cache.put(ticket.getId(), ticket);
+                log.debug("CACHE SET tickets::{}", ticket.getId());
+            });
+        }
 
         return tickets;
     }
+
 }

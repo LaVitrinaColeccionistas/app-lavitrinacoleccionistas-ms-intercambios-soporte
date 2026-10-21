@@ -28,11 +28,17 @@ spring:
       pageable:
         default-page-size: ${PAGE_DEFAULT_SIZE:20}
         max-page-size: ${PAGE_MAX_SIZE:100}
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
 
 app:
   pagination:
     sort-field: ${PAGE_SORT_FIELD:id}
     sort-direction: ${PAGE_SORT_DIRECTION:DESC}
+  cache:
+    intercambio-ttl: ${CACHE_INTERCAMBIO_TTL:300}
+    ticket-ttl: ${CACHE_TICKET_TTL:300}
 
 server:
   port: ${SERVER_PORT:8081}
