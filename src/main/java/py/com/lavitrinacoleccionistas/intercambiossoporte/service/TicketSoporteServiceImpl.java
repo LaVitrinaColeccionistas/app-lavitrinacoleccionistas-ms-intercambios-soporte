@@ -48,24 +48,39 @@ public class TicketSoporteServiceImpl implements ITicketSoporteService {
         return ticketSoporteMapper.toDTO(guardado);
     }
 
+
     @Override
     @Transactional(readOnly = true)
     public Page<TicketSoporteDTO> listar(Pageable pageable) {
 
-        Page<TicketSoporteDTO> tickets = ticketSoporteRepository
-                .findAll(pageable)
-                .map(ticketSoporteMapper::toDTO);
-
         Cache cache = cacheManager.getCache("tickets");
 
-        if (cache != null) {
-            tickets.getContent().forEach(ticket -> {
-                cache.put(ticket.getId(), ticket);
-                log.debug("CACHE SET tickets::{}", ticket.getId());
-            });
-        }
+        return ticketSoporteRepository.findAll(pageable).map(ticket -> {
 
-        return tickets;
+            Long id = ticket.getId();
+
+            if (cache != null) {
+                TicketSoporteDTO cacheado =
+                        cache.get(id, TicketSoporteDTO.class);
+
+                if (cacheado != null) {
+                    log.info("CACHE HIT tickets::{}", id);
+                    return cacheado;
+                }
+
+                log.info("CACHE MISS tickets::{}", id);
+            }
+
+            TicketSoporteDTO dto = ticketSoporteMapper.toDTO(ticket);
+
+            if (cache != null) {
+                cache.put(id, dto);
+                log.info("CACHE SET tickets::{}", id);
+            }
+
+            return dto;
+        });
     }
+
 
 }

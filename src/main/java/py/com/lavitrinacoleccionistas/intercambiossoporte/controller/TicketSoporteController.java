@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteCreateDTO;
 import py.com.lavitrinacoleccionistas.dto.TicketSoporteDTO;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.service.ITicketSoporteService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @Slf4j
 @RestController
@@ -37,6 +38,7 @@ public class TicketSoporteController {
                 .body(creado);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public ResponseEntity<Page<TicketSoporteDTO>> listar(
             @ParameterObject Pageable pageable

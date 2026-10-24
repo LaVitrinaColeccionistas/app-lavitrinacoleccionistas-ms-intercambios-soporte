@@ -76,6 +76,12 @@
     <logger name="py.com.lavitrinacoleccionistas.intercambiossoporte"
             level="${LOG_LEVEL}"/>
 
+    <logger name="org.springframework.data.redis.cache"
+            level="${REDIS_LOG_LEVEL:-TRACE}"/>
+
+    <logger name="org.springframework.cache.interceptor"
+            level="${REDIS_LOG_LEVEL:-TRACE}"/>
+
 
     <!-- ROOT -->
     <root level="${LOG_LEVEL}">

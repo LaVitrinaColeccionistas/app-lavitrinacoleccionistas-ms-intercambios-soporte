@@ -18,6 +18,7 @@ import py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO;
 import py.com.lavitrinacoleccionistas.entity.Intercambio;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.filter.IntercambioFilter;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @Slf4j
 @RestController
@@ -33,6 +34,7 @@ public class IntercambioController
         super(service);
     }
 
+    @PreAuthorize("hasRole('COMPRADOR')")
     @PostMapping
     public ResponseEntity<IntercambioDTO> crear(
             @Valid @RequestBody IntercambioCreateDTO dto
@@ -48,6 +50,7 @@ public class IntercambioController
                 .body(service.crear(dto));
     }
 
+    @PreAuthorize("hasRole('COMPRADOR')")
     @PutMapping("/{id}")
     public ResponseEntity<IntercambioDTO> actualizar(
             @PathVariable Long id,
@@ -58,6 +61,7 @@ public class IntercambioController
         return ResponseEntity.ok(service.actualizar(id, dto));
     }
 
+    @PreAuthorize("hasAnyRole('COMPRADOR','VENDEDOR')")
     @PatchMapping("/{id}/estado")
     public ResponseEntity<IntercambioDTO> actualizarEstado(
             @PathVariable Long id,
@@ -71,4 +75,6 @@ public class IntercambioController
 
         return ResponseEntity.ok(service.actualizarEstado(id, dto));
     }
+
+
 }

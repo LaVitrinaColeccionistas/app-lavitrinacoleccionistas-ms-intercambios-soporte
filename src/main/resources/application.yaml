@@ -53,6 +53,11 @@ app:
       intercambios: ${CACHE_TTL_INTERCAMBIOS:5m}
       tickets: ${CACHE_TTL_TICKETS:5m}
 
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      issuer: ${JWT_ISSUER:lvc-auth}
+
 server:
   port: ${SERVER_PORT:8081}
   forward-headers-strategy: framework

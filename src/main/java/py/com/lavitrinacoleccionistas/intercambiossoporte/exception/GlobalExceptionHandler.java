@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
+import org.springframework.security.access.AccessDeniedException;
 
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
@@ -131,6 +132,41 @@ public class GlobalExceptionHandler {
                 HttpStatus.BAD_REQUEST,
                 "Datos inválidos",
                 "Los datos enviados no cumplen las restricciones requeridas",
+                req,
+                null
+        );
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ApiError> handleAccessDenied(
+            AccessDeniedException ex,
+            HttpServletRequest req
+    ) {
+        log.warn("Acceso denegado: {}", ex.getMessage());
+
+        return build(
+                HttpStatus.FORBIDDEN,
+                "Acceso denegado",
+                "No tiene permisos para realizar esta operación",
+                req,
+                null
+        );
+    }
+
+    @ExceptionHandler({
+            IllegalArgumentException.class,
+            IllegalStateException.class
+    })
+    public ResponseEntity<ApiError> handleInvalidOperation(
+            RuntimeException ex,
+            HttpServletRequest req
+    ) {
+        log.warn("Operación inválida: {}", ex.getMessage());
+
+        return build(
+                HttpStatus.BAD_REQUEST,
+                "Solicitud inválida",
+                ex.getMessage(),
                 req,
                 null
         );

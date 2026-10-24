@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import py.com.lavitrinacoleccionistas.dto.DetalleIntercambioDTO;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.service.IDetalleIntercambioService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class DetalleIntercambioController {
 
     private final IDetalleIntercambioService detalleIntercambioService;
 
+    @PreAuthorize("hasAnyRole('COMPRADOR','VENDEDOR','ADMIN')")
     @GetMapping
     public ResponseEntity<List<DetalleIntercambioDTO>> listarPorIntercambio(
             @PathVariable Long idIntercambio

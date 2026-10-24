@@ -26,7 +26,9 @@ import py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRe
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
-
+import org.springframework.security.access.AccessDeniedException;
+import py.com.lavitrinacoleccionistas.intercambiossoporte.config.UsuarioAutenticado;
+import org.springframework.security.access.prepost.PreAuthorize;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -47,6 +49,7 @@ public class IntercambioServiceImpl
     private final CacheManager cacheManager;
 
     @Override
+    @PreAuthorize("@intercambioAuthorization.puedeConsultar(#id)")
     @Cacheable(value = "intercambios", key = "#id")
     public IntercambioDTO getById(Long id) {
         return super.getById(id);
@@ -113,6 +116,7 @@ public class IntercambioServiceImpl
     }
 
     @Override
+    @CachePut(value = "intercambios", key = "#result.id")
     @Transactional
     public IntercambioDTO crear(IntercambioCreateDTO dto) {
         log.info(
@@ -120,6 +124,9 @@ public class IntercambioServiceImpl
                 dto.getIdUsuarioProponente(),
                 dto.getIdUsuarioReceptor()
         );
+        if (!UsuarioAutenticado.id().equals(dto.getIdUsuarioProponente())) {
+            throw new AccessDeniedException("Proponente no autorizado");
+        }
 
         Intercambio intercambio = intercambioMapper.toEntity(dto);
         intercambio.setActivo(true);
@@ -140,6 +147,14 @@ public class IntercambioServiceImpl
         log.info("Actualizando intercambio con id: {}", id);
 
         Intercambio intercambio = findActiveEntity(id);
+
+        if (!UsuarioAutenticado.id().equals(intercambio.getIdUsuarioProponente())) {
+            throw new AccessDeniedException("Solo el proponente puede editar");
+        }
+
+        if (intercambio.getEstado() != EstadoIntercambio.PROPUESTO) {
+            throw new IllegalStateException("Solo se pueden editar intercambios propuestos");
+        }
 
         intercambioMapper.updateEntity(dto, intercambio);
 
@@ -168,9 +183,45 @@ public class IntercambioServiceImpl
 
         Intercambio intercambio = findActiveEntity(id);
 
-        intercambio.setEstado(
-                EstadoIntercambio.valueOf(dto.getEstado().name())
-        );
+        Long usuarioId = UsuarioAutenticado.id();
+        EstadoIntercambio nuevoEstado =
+                EstadoIntercambio.valueOf(dto.getEstado().name());
+
+        if (intercambio.getEstado() != EstadoIntercambio.PROPUESTO) {
+            throw new IllegalStateException(
+                    "Solo se puede cambiar el estado de intercambios propuestos"
+            );
+        }
+
+        switch (nuevoEstado) {
+            case ACEPTADO, RECHAZADO -> {
+                if (!UsuarioAutenticado.tieneRol("VENDEDOR")
+                        || !usuarioId.equals(intercambio.getIdUsuarioReceptor())) {
+                    throw new AccessDeniedException(
+                            "Solo el vendedor receptor puede aceptar o rechazar"
+                    );
+                }
+            }
+
+            case CANCELADO -> {
+                boolean esProponente =
+                        usuarioId.equals(intercambio.getIdUsuarioProponente());
+                boolean esReceptor =
+                        usuarioId.equals(intercambio.getIdUsuarioReceptor());
+
+                if (!esProponente && !esReceptor) {
+                    throw new AccessDeniedException(
+                            "Solo los participantes pueden cancelar"
+                    );
+                }
+            }
+
+            default -> throw new IllegalArgumentException(
+                    "Cambio de estado no permitido"
+            );
+        }
+
+        intercambio.setEstado(nuevoEstado);
 
         Intercambio actualizado = intercambioRepository.save(intercambio);
 
@@ -215,21 +266,44 @@ public class IntercambioServiceImpl
         super.delete(id);
     }
 
+
     @Override
     @Transactional(readOnly = true)
     public Page<IntercambioDTO> getByFilter(IntercambioFilter filter) {
+
+        if (!UsuarioAutenticado.esAdmin()) {
+            filter.setIdUsuario(UsuarioAutenticado.id());
+        }
 
         Page<IntercambioDTO> intercambios = super.getByFilter(filter);
 
         Cache cache = cacheManager.getCache("intercambios");
 
-        if (cache != null) {
-            intercambios.getContent().forEach(intercambio -> {
-                cache.put(intercambio.getId(), intercambio);
-                log.debug("CACHE SET intercambios::{}", intercambio.getId());
-            });
+        if (cache == null) {
+            return intercambios;
         }
 
-        return intercambios;
+        return intercambios.map(intercambio -> {
+
+            Long id = intercambio.getId();
+
+            IntercambioDTO cacheado =
+                    cache.get(id, IntercambioDTO.class);
+
+            if (cacheado != null) {
+                log.info("CACHE HIT intercambios::{}", id);
+                return cacheado;
+            }
+
+            log.info("CACHE MISS intercambios::{}", id);
+
+            cache.put(id, intercambio);
+            log.info("CACHE SET intercambios::{}", id);
+
+            return intercambio;
+        });
     }
+
+
+
 }
