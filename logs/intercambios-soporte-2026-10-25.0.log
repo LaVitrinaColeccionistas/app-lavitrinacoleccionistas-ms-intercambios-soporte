@@ -1,0 +1,341 @@
+2026-10-25 22:19:39 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-25 22:19:39 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Starting AppLavitrinaMsIntercambiosSoporteApplication using Java 25.0.4.1 with PID 16220 (C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte\target\classes started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-25 22:19:39 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-25 22:19:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-25 22:19:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-25 22:19:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 500 ms. Found 4 JPA repository interfaces.
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IDetalleIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-25 22:19:44 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2026-10-25 22:19:45 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=98ee1f69-8f62-3f14-86de-eb76d784dbcd
+2026-10-25 22:19:46 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-25 22:19:46 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-25 22:19:46 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-25 22:19:46 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-25 22:19:46 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 7481 ms
+2026-10-25 22:19:47 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-25 22:19:48 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-25 22:19:49 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-25 22:19:50 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-25 22:19:52 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13731ff4
+2026-10-25 22:19:52 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-25 22:19:53 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-25 22:19:55 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-25 22:19:55 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-25 22:19:55 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-25 22:19:59 INFO  [main] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-10-25 22:19:59 WARN  [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-10-25 22:19:59 INFO  [main] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-10-25 22:19:59 INFO  [main] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-10-25 22:19:59 INFO  [main] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-25 22:20:01 INFO  [main] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-25 22:20:01 INFO  [main] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-10-25 22:20:01 INFO  [main] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-10-25 22:20:01 INFO  [main] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1792977601392 with initial instances count: 0
+2026-10-25 22:20:01 INFO  [main] o.s.c.n.e.s.EurekaServiceRegistry - Registering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status UP
+2026-10-25 22:20:01 INFO  [main] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1792977601420, current=UP, previous=STARTING]
+2026-10-25 22:20:01 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-25 22:20:01 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-25 22:20:01 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/api'
+2026-10-25 22:20:01 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-10-25 22:20:01 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Started AppLavitrinaMsIntercambiosSoporteApplication in 23.172 seconds (process running for 24.591)
+2026-10-25 22:20:01 WARN  [main] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-25 22:20:02 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-25 22:20:31 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-25 22:24:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:29:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:34:42 INFO  [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-25 22:34:42 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-25 22:34:42 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 104 ms
+2026-10-25 22:34:44 INFO  [http-nio-8081-exec-1] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1727 ms
+2026-10-25 22:34:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:38:24 INFO  [http-nio-8081-exec-5] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-25 22:38:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-25 22:38:26 WARN  [http-nio-8081-exec-5] o.s.d.w.c.SpringDataJackson3Configuration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-10-25 22:39:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:41:58 INFO  [http-nio-8081-exec-2] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-25 22:41:58 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-25 22:41:58 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:58 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:41:59 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:03 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-25 22:42:04 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-25 22:42:04 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-25 22:42:04 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-25 22:42:04 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-25 22:42:04 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::19
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::19
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-25 22:42:05 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-25 22:42:06 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-25 22:42:06 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-25 22:42:06 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-25 22:42:06 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-25 22:42:23 INFO  [http-nio-8081-exec-3] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:23 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:42:24 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-25 22:42:24 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-25 22:42:24 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-25 22:42:24 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-25 22:42:25 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::19
+2026-10-25 22:42:25 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-25 22:42:25 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-25 22:42:25 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-25 22:42:25 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-25 22:42:26 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-25 22:44:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:48:38 WARN  [http-nio-8081-exec-10] p.c.l.i.e.GlobalExceptionHandler - Error de validación: {asunto=no debe ser nulo, nombre=no debe ser nulo, email=no debe ser nulo, mensaje=no debe ser nulo}
+2026-10-25 22:49:14 WARN  [http-nio-8081-exec-1] o.h.v.i.m.a.CascadingMetaDataBuilder - HV000271: Using `@Valid` on a container (java.util.List) is deprecated. You should apply the annotation on the type argument(s). Affected element: IntercambioCreateDTO#getDetalles()
+2026-10-25 22:49:14 WARN  [http-nio-8081-exec-1] o.h.v.i.m.a.CascadingMetaDataBuilder - HV000271: Using `@Valid` on a container (java.util.List) is deprecated. You should apply the annotation on the type argument(s). Affected element: IntercambioCreateDTO#getDetalles()
+2026-10-25 22:49:14 WARN  [http-nio-8081-exec-1] p.c.l.i.e.GlobalExceptionHandler - Error de validación: {idUsuarioProponente=no debe ser nulo}
+2026-10-25 22:49:27 WARN  [http-nio-8081-exec-5] p.c.l.i.e.GlobalExceptionHandler - Error de validación: {idUsuarioProponente=no debe ser nulo}
+2026-10-25 22:49:30 WARN  [http-nio-8081-exec-8] p.c.l.i.e.GlobalExceptionHandler - Error de validación: {idUsuarioProponente=no debe ser nulo}
+2026-10-25 22:49:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:50:26 WARN  [http-nio-8081-exec-3] p.c.l.i.e.GlobalExceptionHandler - Error de validación: {idUsuarioProponente=no debe ser nulo}
+2026-10-25 22:51:01 INFO  [http-nio-8081-exec-6] p.c.l.i.c.IntercambioController - Solicitud recibida para crear intercambio. Proponente: 49, receptor: 48
+2026-10-25 22:51:01 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - Creando intercambio entre usuario 49 y usuario 48
+2026-10-25 22:51:01 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 22:51:01 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 22:51:01 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - insert into intercambio (activo,diferencia_dinero,estado,fecha_actualizacion,fecha_creacion,id_usuario_proponente,id_usuario_receptor,usuario_paga_diferencia) values (?,?,?,?,?,?,?,?)
+2026-10-25 22:51:02 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 22:51:02 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 22:51:02 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - Intercambio creado con id: 25
+2026-10-25 22:51:02 TRACE [http-nio-8081-exec-6] o.s.c.interceptor.CacheInterceptor - Computed cache key '25' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.crear(py.com.lavitrinacoleccionistas.dto.IntercambioCreateDTO)] caches=[intercambios] | key='#result.id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-25 22:51:02 TRACE [http-nio-8081-exec-6] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '25' in cache(s) [intercambios]
+2026-10-25 22:52:12 INFO  [http-nio-8081-exec-10] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 25
+2026-10-25 22:52:13 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 22:52:13 WARN  [http-nio-8081-exec-10] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Access Denied
+2026-10-25 22:52:57 INFO  [http-nio-8081-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::19
+2026-10-25 22:52:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::19
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-25 22:52:59 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-25 22:54:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 22:55:58 INFO  [http-nio-8081-exec-5] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 24
+2026-10-25 22:55:58 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 22:55:58 TRACE [http-nio-8081-exec-5] o.s.c.interceptor.CacheInterceptor - Computed cache key '24' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.getById(java.lang.Long)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2026-10-25 22:55:59 TRACE [http-nio-8081-exec-5] o.s.c.interceptor.CacheInterceptor - Cache entry for key '24' found in cache(s) [intercambios]
+2026-10-25 22:56:16 INFO  [http-nio-8081-exec-9] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 24
+2026-10-25 22:56:16 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 22:56:16 TRACE [http-nio-8081-exec-9] o.s.c.interceptor.CacheInterceptor - Computed cache key '24' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.getById(java.lang.Long)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2026-10-25 22:56:17 TRACE [http-nio-8081-exec-9] o.s.c.interceptor.CacheInterceptor - Cache entry for key '24' found in cache(s) [intercambios]
+2026-10-25 22:59:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 23:02:04 WARN  [http-nio-8081-exec-2] o.h.v.i.m.a.CascadingMetaDataBuilder - HV000271: Using `@Valid` on a container (java.util.List) is deprecated. You should apply the annotation on the type argument(s). Affected element: IntercambioUpdateDTO#getDetalles()
+2026-10-25 23:02:04 WARN  [http-nio-8081-exec-2] o.h.v.i.m.a.CascadingMetaDataBuilder - HV000271: Using `@Valid` on a container (java.util.List) is deprecated. You should apply the annotation on the type argument(s). Affected element: IntercambioUpdateDTO#getDetalles()
+2026-10-25 23:02:04 WARN  [http-nio-8081-exec-2] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Access Denied
+2026-10-25 23:03:07 INFO  [http-nio-8081-exec-6] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:03:07 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-25 23:03:07 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::19
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::19
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-25 23:03:08 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-25 23:03:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-25 23:04:54 WARN  [http-nio-8081-exec-10] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Access Denied
+2026-10-25 23:04:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 23:09:51 WARN  [http-nio-8081-exec-4] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Access Denied
+2026-10-25 23:09:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 23:10:57 INFO  [http-nio-8081-exec-9] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:57 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:58 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:58 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:58 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:10:58 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-25 23:10:58 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-25 23:10:58 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-25 23:10:58 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-25 23:10:58 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-25 23:10:58 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::19
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::19
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-25 23:10:59 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-25 23:11:00 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-25 23:11:00 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-25 23:11:00 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-25 23:11:00 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-25 23:11:52 INFO  [http-nio-8081-exec-8] p.c.l.i.controller.BaseController - Solicitud recibida para obtener registro con id: 19
+2026-10-25 23:11:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 23:11:52 TRACE [http-nio-8081-exec-8] o.s.c.interceptor.CacheInterceptor - Computed cache key '19' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.getById(java.lang.Long)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless='' | sync='false'
+2026-10-25 23:11:53 TRACE [http-nio-8081-exec-8] o.s.c.interceptor.CacheInterceptor - Cache entry for key '19' found in cache(s) [intercambios]
+2026-10-25 23:12:21 INFO  [http-nio-8081-exec-2] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar intercambio con id: 24
+2026-10-25 23:12:21 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - Actualizando intercambio con id: 24
+2026-10-25 23:12:21 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 23:12:21 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:12:21 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:12:21 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:12:21 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:12:21 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:12:22 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - Intercambio actualizado con id: 24
+2026-10-25 23:12:22 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-25 23:12:22 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-25 23:12:22 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-25 23:12:22 TRACE [http-nio-8081-exec-2] o.s.c.interceptor.CacheInterceptor - Computed cache key '24' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.actualizar(java.lang.Long,py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-25 23:12:22 TRACE [http-nio-8081-exec-2] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '24' in cache(s) [intercambios]
+2026-10-25 23:12:47 INFO  [http-nio-8081-exec-3] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar intercambio con id: 19
+2026-10-25 23:12:47 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - Actualizando intercambio con id: 19
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:12:47 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - Intercambio actualizado con id: 19
+2026-10-25 23:12:47 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-25 23:12:47 TRACE [http-nio-8081-exec-3] o.s.c.interceptor.CacheInterceptor - Computed cache key '19' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.actualizar(java.lang.Long,py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-25 23:12:47 TRACE [http-nio-8081-exec-3] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '19' in cache(s) [intercambios]
+2026-10-25 23:12:57 INFO  [http-nio-8081-exec-6] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar intercambio con id: 19
+2026-10-25 23:12:57 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - Actualizando intercambio con id: 19
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:12:57 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - Intercambio actualizado con id: 19
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-25 23:12:57 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-25 23:12:57 TRACE [http-nio-8081-exec-6] o.s.c.interceptor.CacheInterceptor - Computed cache key '19' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.actualizar(java.lang.Long,py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-25 23:12:57 TRACE [http-nio-8081-exec-6] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '19' in cache(s) [intercambios]
+2026-10-25 23:13:46 INFO  [http-nio-8081-exec-7] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar intercambio con id: 19
+2026-10-25 23:13:46 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - Actualizando intercambio con id: 19
+2026-10-25 23:13:46 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 23:13:46 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-25 23:13:46 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:13:46 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select p1_0.id,p1_0.activo,p1_0.categoria,p1_0.estado_conservacion,p1_0.fecha_actualizacion,p1_0.fecha_creacion,p1_0.id_vendedor,p1_0.nombre,p1_0.precio_referencia,p1_0.rareza,p1_0.stock,p1_0.url_imagen,p1_0.version from producto p1_0 where p1_0.id=?
+2026-10-25 23:13:46 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:13:47 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - insert into detalle_intercambio (cantidad,id_intercambio,nombre_producto_snapshot,id_producto,tipo_movimiento) values (?,?,?,?,?)
+2026-10-25 23:13:47 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - Intercambio actualizado con id: 19
+2026-10-25 23:13:47 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-25 23:13:47 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - delete from detalle_intercambio where id=?
+2026-10-25 23:13:47 TRACE [http-nio-8081-exec-7] o.s.c.interceptor.CacheInterceptor - Computed cache key '19' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.actualizar(java.lang.Long,py.com.lavitrinacoleccionistas.dto.IntercambioUpdateDTO)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-25 23:13:47 TRACE [http-nio-8081-exec-7] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '19' in cache(s) [intercambios]
+2026-10-25 23:14:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-25 23:16:20 INFO  [http-nio-8081-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para eliminar lógicamente registro con id: 19
+2026-10-25 23:16:21 INFO  [http-nio-8081-exec-1] p.c.l.i.service.AbstractBaseService - Realizando eliminación lógica de Intercambio con id: 19
+2026-10-25 23:16:21 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-25 23:16:21 INFO  [http-nio-8081-exec-1] p.c.l.i.service.AbstractBaseService - Intercambio con id 19 marcado como inactivo
+2026-10-25 23:16:21 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-25 23:16:21 TRACE [http-nio-8081-exec-1] o.s.c.interceptor.CacheInterceptor - Computed cache key '19' for operation Builder[public void py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.delete(java.lang.Long)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='',false,false
+2026-10-25 23:16:21 TRACE [http-nio-8081-exec-1] o.s.c.interceptor.CacheInterceptor - Invalidating cache key [19] for operation Builder[public void py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.delete(java.lang.Long)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='',false,false on method public void py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.delete(java.lang.Long)
+2026-10-25 23:19:59 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
