@@ -20,4 +20,6 @@ public class IntercambioFilter extends PagedFilter {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate fechaHasta;
+
+    private String busqueda;
 }

@@ -32,6 +32,21 @@ public interface IIntercambioRepository
     """)
     Page<Intercambio> buscarTodosActivos(Pageable pageable);
 
+    @Query("""
+    SELECT i
+    FROM Intercambio i
+    WHERE i.activo = true
+      AND (
+          LOWER(COALESCE(i.tituloPublicacionSnapshot, ''))
+              LIKE LOWER(CONCAT('%', :busqueda, '%'))
+          OR LOWER(CAST(i.estado AS String))
+              LIKE LOWER(CONCAT('%', :busqueda, '%'))
+      )
+    """)
+    Page<Intercambio> buscarPorTexto(
+            @Param("busqueda") String busqueda,
+            Pageable pageable
+    );
 
     @Query("""
     SELECT i

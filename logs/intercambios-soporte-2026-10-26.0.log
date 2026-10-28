@@ -1,0 +1,1306 @@
+2026-10-26 16:31:10 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-26 16:31:11 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Starting AppLavitrinaMsIntercambiosSoporteApplication using Java 25.0.4.1 with PID 8684 (C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte\target\classes started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-26 16:31:11 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-26 16:31:16 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 16:31:16 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 483 ms. Found 4 JPA repository interfaces.
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IDetalleIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 16:31:17 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 0 Redis repository interfaces.
+2026-10-26 16:31:21 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=98ee1f69-8f62-3f14-86de-eb76d784dbcd
+2026-10-26 16:31:23 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-26 16:31:23 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-26 16:31:23 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-26 16:31:23 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-26 16:31:24 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 13043 ms
+2026-10-26 16:31:24 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-26 16:31:25 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-26 16:31:28 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-26 16:31:28 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-26 16:31:35 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13731ff4
+2026-10-26 16:31:35 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-26 16:31:35 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-26 16:31:39 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-26 16:31:39 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 16:31:39 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-26 16:31:50 INFO  [main] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-10-26 16:31:51 WARN  [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-10-26 16:31:51 INFO  [main] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-10-26 16:31:51 INFO  [main] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-10-26 16:31:51 INFO  [main] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-26 16:31:52 INFO  [main] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-26 16:31:52 INFO  [main] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-10-26 16:31:52 INFO  [main] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-10-26 16:31:52 INFO  [main] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1793043112609 with initial instances count: 2
+2026-10-26 16:31:52 INFO  [main] o.s.c.n.e.s.EurekaServiceRegistry - Registering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status UP
+2026-10-26 16:31:52 INFO  [main] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793043112635, current=UP, previous=STARTING]
+2026-10-26 16:31:52 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 16:31:52 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-26 16:31:52 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/api'
+2026-10-26 16:31:52 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-10-26 16:31:52 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Started AppLavitrinaMsIntercambiosSoporteApplication in 42.814 seconds (process running for 44.224)
+2026-10-26 16:31:52 WARN  [main] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-26 16:31:52 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 16:36:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 16:41:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 16:46:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 16:51:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 16:56:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 17:01:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 17:04:58 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@69c88284 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-26 17:06:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 17:11:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 17:16:14 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@48df2c23 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-26 17:16:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 17:17:27 WARN  [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (5046f02b-2800-4d19-b506-3b2093b1e990)
+org.postgresql.util.PSQLException: FATAL: (EMAXCONNSESSION) max clients reached in session mode - max clients are limited to pool_size: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:3118)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:251)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:398)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:295)
+	at org.postgresql.Driver.makeConnection(Driver.java:437)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:18:33 WARN  [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (31db5bfb-dbca-4ae9-9235-21898848d4c0)
+org.postgresql.util.PSQLException: FATAL: (EMAXCONNSESSION) max clients reached in session mode - max clients are limited to pool_size: 15
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:837)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:309)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:367)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:295)
+	at org.postgresql.Driver.makeConnection(Driver.java:437)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:19:39 WARN  [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (28e6d731-7cc9-4b3a-b4fc-fe9c648fb05e)
+org.postgresql.util.PSQLException: FATAL: (EMAXCONNSESSION) max clients reached in session mode - max clients are limited to pool_size: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:3118)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:251)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:398)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:295)
+	at org.postgresql.Driver.makeConnection(Driver.java:437)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:20:46 WARN  [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Pool is empty, failed to create/setup connection (41c50cf7-fe2e-4740-8e66-d54dfd08e295)
+org.postgresql.util.PSQLException: FATAL: (EMAXCONNSESSION) max clients reached in session mode - max clients are limited to pool_size: 15
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:3118)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:251)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:398)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:295)
+	at org.postgresql.Driver.makeConnection(Driver.java:437)
+	at org.postgresql.Driver.connect(Driver.java:305)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:21:51 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 17:22:30 INFO  [DiscoveryClient-HeartbeatExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.sendHeartBeat(RestClientEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:90)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:860)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1418)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:219)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:547)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:138)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 22 common frames omitted
+2026-10-26 17:22:30 WARN  [DiscoveryClient-HeartbeatExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-10-26 17:22:30 INFO  [DiscoveryClient-HeartbeatExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.sendHeartBeat(RestClientEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:860)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1418)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:219)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:547)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:138)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 23 common frames omitted
+2026-10-26 17:22:30 WARN  [DiscoveryClient-HeartbeatExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-10-26 17:22:30 ERROR [DiscoveryClient-HeartbeatExecutor-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:860)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1418)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status DOWN
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793046152125, current=DOWN, previous=UP]
+2026-10-26 17:22:32 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 17:22:32 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:888)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.register(RestClientEurekaHttpClient.java:64)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:843)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:219)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:547)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:138)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 24 common frames omitted
+2026-10-26 17:22:32 WARN  [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-10-26 17:22:32 WARN  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:843)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:22:32 WARN  [DiscoveryClient-InstanceInfoReplicator-%d] c.n.discovery.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:843)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-26 17:22:32 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-26 17:22:32 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-10-26 17:22:34 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getApplicationsInternal(RestClientEurekaHttpClient.java:201)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getDelta(RestClientEurekaHttpClient.java:142)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:90)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1095)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:978)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1489)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:219)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:547)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:138)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 25 common frames omitted
+2026-10-26 17:22:34 WARN  [DiscoveryClient-CacheRefreshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-10-26 17:22:34 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:859)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getApplicationsInternal(RestClientEurekaHttpClient.java:201)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getDelta(RestClientEurekaHttpClient.java:142)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1095)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:978)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1489)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:219)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:547)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:138)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 26 common frames omitted
+2026-10-26 17:22:34 WARN  [DiscoveryClient-CacheRefreshExecutor-%d] c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-10-26 17:22:34 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1095)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:978)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1489)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:22:35 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-10-26 17:22:35 INFO  [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:779)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:624)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:888)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.cancel(RestClientEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:934)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:915)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1507)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1500)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:219)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:547)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:138)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequestAndBody(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:614)
+	... 40 common frames omitted
+2026-10-26 17:22:35 WARN  [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-10-26 17:22:35 ERROR [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:934)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:915)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1507)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1500)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1246)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1207)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-10-26 17:22:35 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-10-26 19:54:27 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-26 19:54:27 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Starting AppLavitrinaMsIntercambiosSoporteApplication using Java 25.0.4.1 with PID 7468 (C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte\target\classes started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-26 19:54:27 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-26 19:54:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 19:54:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-26 19:54:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 254 ms. Found 4 JPA repository interfaces.
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IDetalleIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 19:54:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-10-26 19:54:30 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=98ee1f69-8f62-3f14-86de-eb76d784dbcd
+2026-10-26 19:54:31 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-26 19:54:31 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-26 19:54:31 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-26 19:54:31 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-26 19:54:31 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3554 ms
+2026-10-26 19:54:32 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-26 19:54:32 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-26 19:54:33 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-26 19:54:33 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-26 19:54:34 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69fe8c75
+2026-10-26 19:54:34 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-26 19:54:34 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-26 19:54:37 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-26 19:54:37 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 19:54:37 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-26 19:54:41 INFO  [main] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-10-26 19:54:41 WARN  [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-10-26 19:54:42 INFO  [main] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-10-26 19:54:42 INFO  [main] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-10-26 19:54:42 INFO  [main] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1793055282939 with initial instances count: 1
+2026-10-26 19:54:42 INFO  [main] o.s.c.n.e.s.EurekaServiceRegistry - Registering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status UP
+2026-10-26 19:54:42 INFO  [main] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793055282954, current=UP, previous=STARTING]
+2026-10-26 19:54:42 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 19:54:42 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-26 19:54:42 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/api'
+2026-10-26 19:54:42 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-10-26 19:54:43 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 19:54:43 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Started AppLavitrinaMsIntercambiosSoporteApplication in 16.202 seconds (process running for 17.453)
+2026-10-26 19:54:43 WARN  [main] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-26 19:59:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:04:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:05:28 INFO  [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-26 20:05:28 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-26 20:05:28 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 97 ms
+2026-10-26 20:05:29 INFO  [http-nio-8081-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:05:30 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:05:30 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:05:34 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::25
+2026-10-26 20:05:35 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::25
+2026-10-26 20:05:35 WARN  [http-nio-8081-exec-1] o.s.d.w.c.SpringDataJackson3Configuration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-10-26 20:05:35 INFO  [http-nio-8081-exec-2] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:05:35 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:05:35 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:05:36 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::25
+2026-10-26 20:06:00 INFO  [http-nio-8081-exec-3] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:06:00 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:06:01 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:06:01 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::25
+2026-10-26 20:06:01 INFO  [http-nio-8081-exec-4] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:06:01 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:06:01 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:06:01 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::25
+2026-10-26 20:06:09 INFO  [http-nio-8081-exec-6] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:06:09 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:06:09 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:06:09 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::25
+2026-10-26 20:06:09 INFO  [http-nio-8081-exec-5] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:06:09 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:06:09 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:06:10 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::25
+2026-10-26 20:09:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:11:37 INFO  [http-nio-8081-exec-8] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar estado del intercambio 25 a ACEPTADO
+2026-10-26 20:11:37 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - Actualizando estado del intercambio 25 a ACEPTADO
+2026-10-26 20:11:37 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-26 20:11:38 WARN  [http-nio-8081-exec-8] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Solo el vendedor receptor puede aceptar o rechazar
+2026-10-26 20:11:54 INFO  [http-nio-8081-exec-9] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar estado del intercambio 25 a ACEPTADO
+2026-10-26 20:11:55 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - Actualizando estado del intercambio 25 a ACEPTADO
+2026-10-26 20:11:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-26 20:11:55 WARN  [http-nio-8081-exec-9] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Solo el vendedor receptor puede aceptar o rechazar
+2026-10-26 20:12:38 INFO  [http-nio-8081-exec-10] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:12:38 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:12:38 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:12:38 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::25
+2026-10-26 20:12:38 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::25
+2026-10-26 20:12:38 INFO  [http-nio-8081-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:12:38 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:12:39 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:12:39 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::25
+2026-10-26 20:13:13 INFO  [http-nio-8081-exec-2] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:13 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-26 20:13:14 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-26 20:13:15 INFO  [http-nio-8081-exec-3] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:13:15 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:13:15 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:16 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:13:16 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:13:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:13:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:13:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:13:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:13:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:13:18 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:13:18 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:13:35 INFO  [http-nio-8081-exec-4] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar estado del intercambio 24 a ACEPTADO
+2026-10-26 20:13:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - Actualizando estado del intercambio 24 a ACEPTADO
+2026-10-26 20:13:35 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-26 20:13:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - Estado del intercambio 24 actualizado a ACEPTADO
+2026-10-26 20:13:35 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:13:35 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - update intercambio set activo=?,diferencia_dinero=?,estado=?,fecha_actualizacion=?,id_usuario_proponente=?,id_usuario_receptor=?,usuario_paga_diferencia=? where id=?
+2026-10-26 20:13:36 TRACE [http-nio-8081-exec-4] o.s.c.interceptor.CacheInterceptor - Computed cache key '24' for operation Builder[public py.com.lavitrinacoleccionistas.dto.IntercambioDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl.actualizarEstado(java.lang.Long,py.com.lavitrinacoleccionistas.dto.IntercambioEstadoUpdateDTO)] caches=[intercambios] | key='#id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-26 20:13:36 TRACE [http-nio-8081-exec-4] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '24' in cache(s) [intercambios]
+2026-10-26 20:14:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:15:46 INFO  [http-nio-8081-exec-5] p.c.l.i.c.TicketSoporteController - Solicitud recibida para crear ticket de soporte. Asunto: Fallo
+2026-10-26 20:15:46 INFO  [http-nio-8081-exec-5] p.c.l.i.s.TicketSoporteServiceImpl - Iniciando creación de ticket de soporte. Asunto: Fallo
+2026-10-26 20:15:46 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - insert into ticket_soporte (asunto,email,fecha_envio,mensaje,nombre) values (?,?,?,?,?)
+2026-10-26 20:15:47 INFO  [http-nio-8081-exec-5] p.c.l.i.s.TicketSoporteServiceImpl - Ticket de soporte creado correctamente con id: 20
+2026-10-26 20:15:47 TRACE [http-nio-8081-exec-5] o.s.c.interceptor.CacheInterceptor - Computed cache key '20' for operation Builder[public py.com.lavitrinacoleccionistas.dto.TicketSoporteDTO py.com.lavitrinacoleccionistas.intercambiossoporte.service.TicketSoporteServiceImpl.crear(py.com.lavitrinacoleccionistas.dto.TicketSoporteCreateDTO)] caches=[tickets] | key='#result.id' | keyGenerator='' | cacheManager='' | cacheResolver='' | condition='' | unless=''
+2026-10-26 20:15:47 TRACE [http-nio-8081-exec-5] o.s.c.interceptor.CacheInterceptor - Creating cache entry for key '20' in cache(s) [tickets]
+2026-10-26 20:16:09 INFO  [http-nio-8081-exec-7] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:09 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:10 DEBUG [http-nio-8081-exec-7] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:10 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:16:10 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:16:10 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:16:10 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:16:11 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:16:11 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:16:11 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:16:11 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:16:11 INFO  [http-nio-8081-exec-7] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:16:11 INFO  [http-nio-8081-exec-8] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:16:11 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:12 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:16:12 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:16:13 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:16:13 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:16:13 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:16:13 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:16:13 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:16:14 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:16:14 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:16:45 INFO  [http-nio-8081-exec-9] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:16:45 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:46 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:16:46 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:16:47 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:16:47 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:16:47 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:16:47 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:16:47 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:16:48 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:16:48 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:16:48 INFO  [http-nio-8081-exec-10] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:48 DEBUG [http-nio-8081-exec-10] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:49 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:16:49 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:16:49 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:16:49 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:16:50 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:16:50 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:16:50 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:16:50 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:16:50 INFO  [http-nio-8081-exec-10] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:16:51 INFO  [http-nio-8081-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:16:51 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:16:51 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:51 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:51 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:51 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:51 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:52 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:52 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:52 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:52 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:52 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:16:52 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:16:52 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:16:53 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:16:53 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:16:53 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:16:53 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:16:53 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:16:54 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:16:54 INFO  [http-nio-8081-exec-2] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:16:54 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:16:55 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:16:55 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:16:55 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:16:55 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:16:55 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:16:55 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:16:56 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:16:56 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:19:33 INFO  [http-nio-8081-exec-4] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:19:33 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:19:33 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:34 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-26 20:19:34 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-26 20:19:34 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-26 20:19:34 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-26 20:19:35 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-26 20:19:36 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-26 20:19:36 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-26 20:19:36 INFO  [http-nio-8081-exec-6] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:36 DEBUG [http-nio-8081-exec-6] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:19:37 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:19:37 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:19:37 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:19:37 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:19:37 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:19:38 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:19:38 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:19:38 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:19:38 INFO  [http-nio-8081-exec-6] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:19:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:19:59 INFO  [http-nio-8081-exec-5] p.c.l.i.c.IntercambioController - Solicitud recibida para actualizar estado del intercambio 17 a RECHAZADO
+2026-10-26 20:19:59 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - Actualizando estado del intercambio 17 a RECHAZADO
+2026-10-26 20:19:59 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.id=? and i1_0.activo=true
+2026-10-26 20:19:59 WARN  [http-nio-8081-exec-5] p.c.l.i.e.GlobalExceptionHandler - Acceso denegado: Solo el vendedor receptor puede aceptar o rechazar
+2026-10-26 20:21:52 INFO  [http-nio-8081-exec-8] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:52 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:53 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:53 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:21:53 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:21:53 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:21:53 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:21:54 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:21:54 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:21:54 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:21:54 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:21:54 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:21:55 INFO  [http-nio-8081-exec-9] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:21:55 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:21:55 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::22
+2026-10-26 20:21:56 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::21
+2026-10-26 20:21:56 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::20
+2026-10-26 20:21:56 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::18
+2026-10-26 20:21:56 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::17
+2026-10-26 20:21:57 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::16
+2026-10-26 20:21:57 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::15
+2026-10-26 20:21:57 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::14
+2026-10-26 20:24:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:25:41 INFO  [http-nio-8081-exec-1] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1893 ms
+2026-10-26 20:29:24 INFO  [http-nio-8081-exec-5] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 DEBUG [http-nio-8081-exec-5] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:29:25 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-26 20:29:25 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::22
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::22
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::21
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::21
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::20
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::20
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::18
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::18
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::17
+2026-10-26 20:29:26 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::17
+2026-10-26 20:29:27 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::16
+2026-10-26 20:29:27 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::16
+2026-10-26 20:29:27 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::15
+2026-10-26 20:29:27 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::15
+2026-10-26 20:29:27 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::14
+2026-10-26 20:29:27 INFO  [http-nio-8081-exec-5] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::14
+2026-10-26 20:29:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:34:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:37:09 INFO  [http-nio-8081-exec-8] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:37:11 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:37:12 DEBUG [http-nio-8081-exec-8] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:37:12 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-26 20:37:12 INFO  [http-nio-8081-exec-8] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-26 20:37:12 INFO  [http-nio-8081-exec-9] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:37:12 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:37:12 DEBUG [http-nio-8081-exec-9] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:37:12 INFO  [http-nio-8081-exec-9] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:39:42 INFO  [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:41:57 INFO  [http-nio-8081-exec-1] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:41:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:41:57 DEBUG [http-nio-8081-exec-1] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:41:58 INFO  [http-nio-8081-exec-1] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:41:58 INFO  [http-nio-8081-exec-2] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:41:58 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:41:58 DEBUG [http-nio-8081-exec-2] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:41:58 INFO  [http-nio-8081-exec-2] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:42:16 INFO  [http-nio-8081-exec-3] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:42:17 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:42:17 DEBUG [http-nio-8081-exec-3] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:42:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE MISS intercambios::24
+2026-10-26 20:42:17 INFO  [http-nio-8081-exec-3] p.c.l.i.s.IntercambioServiceImpl - CACHE SET intercambios::24
+2026-10-26 20:42:17 INFO  [http-nio-8081-exec-4] p.c.l.i.controller.BaseController - Solicitud recibida para buscar registros con filtros
+2026-10-26 20:42:17 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select i1_0.id,i1_0.activo,i1_0.diferencia_dinero,i1_0.estado,i1_0.fecha_actualizacion,i1_0.fecha_creacion,i1_0.id_usuario_proponente,i1_0.id_usuario_receptor,i1_0.usuario_paga_diferencia from intercambio i1_0 where i1_0.activo=true and (? is null or i1_0.id_usuario_proponente=? or i1_0.id_usuario_receptor=?) and (? is null or i1_0.estado=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion>=?) and (cast(? as timestamp(6)) is null or i1_0.fecha_creacion<?) order by i1_0.id desc fetch first ? rows only
+2026-10-26 20:42:17 DEBUG [http-nio-8081-exec-4] org.hibernate.SQL - select d1_0.id_intercambio,d1_0.id,d1_0.cantidad,d1_0.nombre_producto_snapshot,d1_0.id_producto,d1_0.tipo_movimiento from detalle_intercambio d1_0 where d1_0.id_intercambio=?
+2026-10-26 20:42:17 INFO  [http-nio-8081-exec-4] p.c.l.i.s.IntercambioServiceImpl - CACHE HIT intercambios::24
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status DOWN
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793058278251, current=DOWN, previous=UP]
+2026-10-26 20:44:38 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 20:44:38 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-26 20:44:38 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-26 20:44:38 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-10-26 20:44:41 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-10-26 20:44:41 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - deregister  status: 200
+2026-10-26 20:44:41 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-10-26 20:44:54 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-26 20:44:54 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Starting AppLavitrinaMsIntercambiosSoporteApplication using Java 25.0.4.1 with PID 10784 (C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte\target\classes started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-26 20:44:54 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 261 ms. Found 4 JPA repository interfaces.
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IDetalleIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:44:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-10-26 20:44:56 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=98ee1f69-8f62-3f14-86de-eb76d784dbcd
+2026-10-26 20:44:57 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-26 20:44:57 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-26 20:44:57 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-26 20:44:57 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-26 20:44:57 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3083 ms
+2026-10-26 20:44:58 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-26 20:44:58 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-26 20:45:00 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-26 20:45:00 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-26 20:45:01 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46051269
+2026-10-26 20:45:01 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-26 20:45:02 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-26 20:45:06 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-26 20:45:06 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 20:45:06 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-26 20:45:10 INFO  [main] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-10-26 20:45:10 WARN  [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-10-26 20:45:10 INFO  [main] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-10-26 20:45:10 INFO  [main] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-10-26 20:45:10 INFO  [main] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-26 20:45:11 INFO  [main] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-26 20:45:11 INFO  [main] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-10-26 20:45:11 INFO  [main] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-10-26 20:45:11 INFO  [main] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1793058311441 with initial instances count: 3
+2026-10-26 20:45:11 INFO  [main] o.s.c.n.e.s.EurekaServiceRegistry - Registering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status UP
+2026-10-26 20:45:11 INFO  [main] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793058311455, current=UP, previous=STARTING]
+2026-10-26 20:45:11 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-26 20:45:11 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 20:45:11 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/api'
+2026-10-26 20:45:11 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-10-26 20:45:11 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Started AppLavitrinaMsIntercambiosSoporteApplication in 17.873 seconds (process running for 19.272)
+2026-10-26 20:45:11 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 20:45:11 WARN  [main] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-26 20:45:48 INFO  [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-26 20:45:48 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-26 20:45:48 INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 20 ms
+2026-10-26 20:45:50 INFO  [http-nio-8081-exec-1] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1677 ms
+2026-10-26 20:47:31 INFO  [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status DOWN
+2026-10-26 20:47:31 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793058451750, current=DOWN, previous=UP]
+2026-10-26 20:47:31 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 20:47:31 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 20:47:31 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-26 20:47:31 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-26 20:47:31 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 20:47:31 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-26 20:47:32 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-26 20:47:32 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-10-26 20:47:35 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-10-26 20:47:35 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - deregister  status: 200
+2026-10-26 20:47:35 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-10-26 20:53:31 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.3.Final
+2026-10-26 20:53:31 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Starting AppLavitrinaMsIntercambiosSoporteApplication using Java 25.0.4.1 with PID 9708 (C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte\target\classes started by ACER in C:\Users\ACER\Desktop\app-lavitrina-ms-intercambios-soporte)
+2026-10-26 20:53:31 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 291 ms. Found 4 JPA repository interfaces.
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IDetalleIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IIntercambioRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.IProductoRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface py.com.lavitrinacoleccionistas.intercambiossoporte.repository.ITicketSoporteRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-26 20:53:36 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2026-10-26 20:53:36 INFO  [main] o.s.cloud.context.scope.GenericScope - BeanFactory id=98ee1f69-8f62-3f14-86de-eb76d784dbcd
+2026-10-26 20:53:37 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-26 20:53:37 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-26 20:53:37 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-26 20:53:37 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-26 20:53:38 INFO  [main] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 6028 ms
+2026-10-26 20:53:38 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-26 20:53:38 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-26 20:53:39 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-26 20:53:39 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-26 20:53:40 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78f35e39
+2026-10-26 20:53:40 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-26 20:53:40 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-26 20:53:42 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-26 20:53:42 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 20:53:42 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-26 20:53:47 INFO  [main] o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-10-26 20:53:47 WARN  [main] o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-10-26 20:53:47 INFO  [main] o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-10-26 20:53:47 INFO  [main] c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-10-26 20:53:47 INFO  [main] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-26 20:53:48 INFO  [main] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-26 20:53:48 INFO  [main] c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-10-26 20:53:48 INFO  [main] c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-10-26 20:53:48 INFO  [main] c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1793058828530 with initial instances count: 0
+2026-10-26 20:53:48 INFO  [main] o.s.c.n.e.s.EurekaServiceRegistry - Registering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status UP
+2026-10-26 20:53:48 INFO  [main] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793058828546, current=UP, previous=STARTING]
+2026-10-26 20:53:48 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 20:53:48 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-26 20:53:48 INFO  [main] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/api'
+2026-10-26 20:53:48 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2026-10-26 20:53:48 INFO  [main] p.c.l.i.AppLavitrinaMsIntercambiosSoporteApplication - Started AppLavitrinaMsIntercambiosSoporteApplication in 19.557 seconds (process running for 21.025)
+2026-10-26 20:53:48 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 20:53:48 WARN  [main] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-10-26 20:54:18 INFO  [DiscoveryClient-CacheRefreshExecutor-%d] c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-10-26 20:56:21 INFO  [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE with eureka with status DOWN
+2026-10-26 20:56:21 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1793058981760, current=DOWN, previous=UP]
+2026-10-26 20:56:21 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081: registering service...
+2026-10-26 20:56:21 INFO  [DiscoveryClient-InstanceInfoReplicator-%d] c.netflix.discovery.DiscoveryClient - DiscoveryClient_APP-LAVITRINACOLECCIONISTAS-MS-INTERCAMBIOS-SOPORTE/app-lavitrinacoleccionistas-ms-intercambios-soporte:8081 - registration status: 204
+2026-10-26 20:56:21 INFO  [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-26 20:56:21 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-26 20:56:22 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-26 20:56:22 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-26 20:56:22 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-26 20:56:22 INFO  [SpringApplicationShutdownHook] c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...

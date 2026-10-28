@@ -33,6 +33,8 @@ public interface IntercambioMapper
     @Mapping(target = "detalles", ignore = true)
     @Mapping(target = "fechaCreacion", ignore = true)
     @Mapping(target = "fechaActualizacion", ignore = true)
+    @Mapping(target = "idPublicacion", ignore = true)
+    @Mapping(target = "tituloPublicacionSnapshot", ignore = true)
     void updateEntity(
             IntercambioUpdateDTO dto,
             @MappingTarget Intercambio entity

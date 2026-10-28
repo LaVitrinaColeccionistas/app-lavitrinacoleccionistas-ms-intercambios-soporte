@@ -89,6 +89,14 @@ public class IntercambioServiceImpl
                 : filter.getFechaHasta()
                 .plusDays(1)
                 .atStartOfDay();
+        String busqueda = filter.getBusqueda();
+
+        if (busqueda != null && !busqueda.isBlank()) {
+            return intercambioRepository.buscarPorTexto(
+                    busqueda.trim(),
+                    pageable
+            );
+        }
 
         // Sin filtros
         if (filter.getIdUsuario() == null
