@@ -36,7 +36,7 @@ spring:
       password: ${REDIS_PASSWORD:}
       ssl:
         enabled: ${REDIS_SSL:false}
-      timeout: ${REDIS_TIMEOUT:3000ms}
+      timeout: ${REDIS_TIMEOUT:10000ms}
 
   cache:
     type: redis

@@ -292,6 +292,7 @@ public class IntercambioServiceImpl
     }
 
 
+
     @Override
     @Transactional(readOnly = true)
     public Page<IntercambioDTO> getByFilter(IntercambioFilter filter) {
@@ -305,6 +306,7 @@ public class IntercambioServiceImpl
         Cache cache = cacheManager.getCache("intercambios");
 
         if (cache == null) {
+            log.warn("CACHE NO DISPONIBLE: intercambios");
             return intercambios;
         }
 
@@ -312,23 +314,30 @@ public class IntercambioServiceImpl
 
             Long id = intercambio.getId();
 
-            IntercambioDTO cacheado =
-                    cache.get(id, IntercambioDTO.class);
+            try {
+                IntercambioDTO cacheado =
+                        cache.get(id, IntercambioDTO.class);
 
-            if (cacheado != null) {
-                log.info("CACHE HIT intercambios::{}", id);
-                return cacheado;
+                if (cacheado != null) {
+                    log.info("CACHE HIT intercambios::{}", id);
+                    return cacheado;
+                }
+
+                log.info("CACHE MISS intercambios::{}", id);
+
+                cache.put(id, intercambio);
+                log.info("CACHE SET intercambios::{}", id);
+
+            } catch (org.springframework.data.redis.RedisConnectionFailureException ex) {
+                log.warn(
+                        "CACHE ERROR intercambios::{} - Redis no disponible: {}",
+                        id,
+                        ex.getMessage()
+                );
             }
-
-            log.info("CACHE MISS intercambios::{}", id);
-
-            cache.put(id, intercambio);
-            log.info("CACHE SET intercambios::{}", id);
 
             return intercambio;
         });
     }
-
-
 
 }
