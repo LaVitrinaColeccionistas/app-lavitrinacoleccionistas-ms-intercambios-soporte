@@ -176,6 +176,7 @@ public class IntercambioServiceImpl
         return intercambioMapper.toDTO(actualizado);
     }
 
+
     @Override
     @CachePut(value = "intercambios", key = "#id")
     @Transactional
@@ -195,7 +196,13 @@ public class IntercambioServiceImpl
         EstadoIntercambio nuevoEstado =
                 EstadoIntercambio.valueOf(dto.getEstado().name());
 
-        if (intercambio.getEstado() != EstadoIntercambio.PROPUESTO) {
+        if (nuevoEstado == EstadoIntercambio.COMPLETADO) {
+            if (intercambio.getEstado() != EstadoIntercambio.ACEPTADO) {
+                throw new IllegalStateException(
+                        "Solo se pueden completar intercambios aceptados"
+                );
+            }
+        } else if (intercambio.getEstado() != EstadoIntercambio.PROPUESTO) {
             throw new IllegalStateException(
                     "Solo se puede cambiar el estado de intercambios propuestos"
             );
@@ -224,6 +231,15 @@ public class IntercambioServiceImpl
                 }
             }
 
+            case COMPLETADO -> {
+                if (!UsuarioAutenticado.tieneRol("VENDEDOR")
+                        || !usuarioId.equals(intercambio.getIdUsuarioReceptor())) {
+                    throw new AccessDeniedException(
+                            "Solo el vendedor receptor puede completar el intercambio"
+                    );
+                }
+            }
+
             default -> throw new IllegalArgumentException(
                     "Cambio de estado no permitido"
             );
@@ -241,6 +257,7 @@ public class IntercambioServiceImpl
 
         return intercambioMapper.toDTO(actualizado);
     }
+
 
     private void agregarDetalles(
             Intercambio intercambio,
