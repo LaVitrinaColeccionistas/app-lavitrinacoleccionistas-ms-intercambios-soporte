@@ -36,12 +36,8 @@ public interface IIntercambioRepository
     SELECT i
     FROM Intercambio i
     WHERE i.activo = true
-      AND (
-          LOWER(COALESCE(i.tituloPublicacionSnapshot, ''))
-              LIKE LOWER(CONCAT('%', :busqueda, '%'))
-          OR LOWER(CAST(i.estado AS String))
-              LIKE LOWER(CONCAT('%', :busqueda, '%'))
-      )
+      AND LOWER(COALESCE(i.tituloPublicacionSnapshot, ''))
+          LIKE LOWER(CONCAT('%', :busqueda, '%'))
     """)
     Page<Intercambio> buscarPorTexto(
             @Param("busqueda") String busqueda,
@@ -55,8 +51,12 @@ public interface IIntercambioRepository
       AND (:idUsuario IS NULL
            OR i.idUsuarioProponente = :idUsuario
            OR i.idUsuarioReceptor = :idUsuario)
-      AND (:estado IS NULL
-           OR i.estado = :estado)
+      AND (:estado IS NULL OR i.estado = :estado)
+      AND (
+          CAST(:busqueda AS String) IS NULL
+          OR LOWER(COALESCE(i.tituloPublicacionSnapshot, ''))
+             LIKE CONCAT('%', LOWER(CAST(:busqueda AS String)), '%')
+      )
       AND (CAST(:fechaDesde AS LocalDateTime) IS NULL
            OR i.fechaCreacion >= :fechaDesde)
       AND (CAST(:fechaHasta AS LocalDateTime) IS NULL
@@ -65,6 +65,7 @@ public interface IIntercambioRepository
     Page<Intercambio> buscarConFiltros(
             @Param("idUsuario") Long idUsuario,
             @Param("estado") EstadoIntercambio estado,
+            @Param("busqueda") String busqueda,
             @Param("fechaDesde") LocalDateTime fechaDesde,
             @Param("fechaHasta") LocalDateTime fechaHasta,
             Pageable pageable

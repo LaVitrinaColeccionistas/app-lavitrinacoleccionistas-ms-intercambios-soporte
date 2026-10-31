@@ -86,31 +86,31 @@ public class IntercambioServiceImpl
 
         LocalDateTime fechaHasta = filter.getFechaHasta() == null
                 ? null
-                : filter.getFechaHasta()
-                .plusDays(1)
-                .atStartOfDay();
+                : filter.getFechaHasta().plusDays(1).atStartOfDay();
+
         String busqueda = filter.getBusqueda();
 
-        if (busqueda != null && !busqueda.isBlank()) {
-            return intercambioRepository.buscarPorTexto(
-                    busqueda.trim(),
-                    pageable
-            );
+        if (busqueda != null) {
+            busqueda = busqueda.trim();
+
+            if (busqueda.isEmpty()) {
+                busqueda = null;
+            }
         }
 
-        // Sin filtros
         if (filter.getIdUsuario() == null
                 && filter.getEstado() == null
+                && busqueda == null
                 && fechaDesde == null
                 && fechaHasta == null) {
 
             return intercambioRepository.buscarTodosActivos(pageable);
         }
 
-        // Con filtros
         return intercambioRepository.buscarConFiltros(
                 filter.getIdUsuario(),
                 filter.getEstado(),
+                busqueda,
                 fechaDesde,
                 fechaHasta,
                 pageable
