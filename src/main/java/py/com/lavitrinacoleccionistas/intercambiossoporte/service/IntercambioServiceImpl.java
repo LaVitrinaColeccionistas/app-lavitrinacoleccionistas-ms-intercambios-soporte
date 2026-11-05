@@ -332,14 +332,9 @@ public class IntercambioServiceImpl
             }
 
             case CANCELADO -> {
-                boolean esProponente =
-                        usuarioId.equals(intercambio.getIdUsuarioProponente());
-                boolean esReceptor =
-                        usuarioId.equals(intercambio.getIdUsuarioReceptor());
-
-                if (!esProponente && !esReceptor) {
+                if (!usuarioId.equals(intercambio.getIdUsuarioProponente())) {
                     throw new AccessDeniedException(
-                            "Solo los participantes pueden cancelar"
+                            "Solo el comprador proponente puede cancelar el intercambio"
                     );
                 }
             }
@@ -413,11 +408,23 @@ public class IntercambioServiceImpl
         }
     }
 
+
     @Override
     @CacheEvict(value = "intercambios", key = "#id")
+    @Transactional
     public void delete(Long id) {
+
+        Intercambio intercambio = findActiveEntity(id);
+
+        if (intercambio.getEstado() == EstadoIntercambio.PROPUESTO
+                || intercambio.getEstado() == EstadoIntercambio.ACEPTADO) {
+
+            catalogoReservaClient.liberar(id);
+        }
+
         super.delete(id);
     }
+
 
 
 

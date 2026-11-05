@@ -17,6 +17,13 @@ import java.util.List;
 
 import py.com.lavitrinacoleccionistas.dto.PublicacionDTO;
 
+import org.springframework.http.HttpStatusCode;
+import org.springframework.web.client.RestClientResponseException;
+import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.client.RestClientException;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import java.time.Duration;
+
 /**
  * Cliente HTTP para comunicar el MS Intercambios con el MS Catálogo.
  * Permite consultar publicaciones y gestionar las reservas de productos
@@ -31,8 +38,13 @@ public class CatalogoReservaClient {
     public CatalogoReservaClient(
             @Value("${app.catalogo.url}") String url
     ) {
+        var factory = new SimpleClientHttpRequestFactory();
+        factory.setConnectTimeout(Duration.ofSeconds(3));
+        factory.setReadTimeout(Duration.ofSeconds(10));
+
         this.client = RestClient.builder()
                 .baseUrl(url)
+                .requestFactory(factory)
                 .build();
     }
 

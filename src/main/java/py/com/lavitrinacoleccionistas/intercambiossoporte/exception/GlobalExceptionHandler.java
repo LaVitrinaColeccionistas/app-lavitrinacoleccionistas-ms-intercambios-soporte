@@ -18,6 +18,10 @@ import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.springframework.web.client.RestClientResponseException;
+import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.client.RestClientException;
+
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -167,6 +171,63 @@ public class GlobalExceptionHandler {
                 HttpStatus.BAD_REQUEST,
                 "Solicitud inválida",
                 ex.getMessage(),
+                req,
+                null
+        );
+    }
+    @ExceptionHandler(RestClientResponseException.class)
+    public ResponseEntity<ApiError> handleCatalogoHttp(
+            RestClientResponseException ex,
+            HttpServletRequest req
+    ) {
+        int codigo = ex.getStatusCode().value();
+
+        HttpStatus status = switch (codigo) {
+            case 400 -> HttpStatus.BAD_REQUEST;
+            case 403 -> HttpStatus.FORBIDDEN;
+            case 404 -> HttpStatus.NOT_FOUND;
+            case 409 -> HttpStatus.CONFLICT;
+            default -> HttpStatus.BAD_GATEWAY;
+        };
+
+        log.warn("Catálogo respondió HTTP {}", codigo);
+
+        return build(
+                status,
+                "Error de Catálogo",
+                "Catálogo rechazó la operación solicitada",
+                req,
+                null
+        );
+    }
+
+    @ExceptionHandler(ResourceAccessException.class)
+    public ResponseEntity<ApiError> handleCatalogoConnection(
+            ResourceAccessException ex,
+            HttpServletRequest req
+    ) {
+        log.error("Error de conexión con Catálogo", ex);
+
+        return build(
+                HttpStatus.SERVICE_UNAVAILABLE,
+                "Catálogo no disponible",
+                "No se pudo completar la comunicación con Catálogo",
+                req,
+                null
+        );
+    }
+
+    @ExceptionHandler(RestClientException.class)
+    public ResponseEntity<ApiError> handleCatalogoClient(
+            RestClientException ex,
+            HttpServletRequest req
+    ) {
+        log.error("Error en cliente HTTP de Catálogo", ex);
+
+        return build(
+                HttpStatus.BAD_GATEWAY,
+                "Error de comunicación",
+                "Respuesta inválida del servicio de Catálogo",
                 req,
                 null
         );
