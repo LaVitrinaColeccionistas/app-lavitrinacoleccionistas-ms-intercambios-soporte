@@ -58,6 +58,9 @@ app:
       secret: ${JWT_SECRET}
       issuer: ${JWT_ISSUER:lvc-auth}
 
+  catalogo:
+    url: ${CATALOGO_URL:http://localhost:8082/api}
+
 server:
   port: ${SERVER_PORT:8081}
   forward-headers-strategy: framework

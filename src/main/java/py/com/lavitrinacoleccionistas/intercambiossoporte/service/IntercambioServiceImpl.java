@@ -35,6 +35,14 @@ import java.util.Optional;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 
+import py.com.lavitrinacoleccionistas.intercambiossoporte.client.CatalogoReservaClient;
+import py.com.lavitrinacoleccionistas.dto.PublicacionDTO;
+import py.com.lavitrinacoleccionistas.dto.ReservaCreateDTO;
+import py.com.lavitrinacoleccionistas.dto.ReservaItemCreateDTO;
+import py.com.lavitrinacoleccionistas.dto.TipoOrigenReserva;
+import py.com.lavitrinacoleccionistas.dto.TipoMovimientoIntercambio;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -47,6 +55,7 @@ public class IntercambioServiceImpl
     private final IntercambioMapper intercambioMapper;
     private final DetalleIntercambioMapper detalleIntercambioMapper;
     private final CacheManager cacheManager;
+    private final CatalogoReservaClient catalogoReservaClient;
 
     @Override
     @PreAuthorize("@intercambioAuthorization.puedeConsultar(#id)")
@@ -141,7 +150,10 @@ public class IntercambioServiceImpl
 
         agregarDetalles(intercambio, dto.getDetalles());
 
-        Intercambio guardado = intercambioRepository.save(intercambio);
+        Intercambio guardado =
+                intercambioRepository.saveAndFlush(intercambio);
+
+        reservarOfrecidos(guardado.getId(), dto);
 
         log.info("Intercambio creado con id: {}", guardado.getId());
 
@@ -152,28 +164,129 @@ public class IntercambioServiceImpl
     @CachePut(value = "intercambios", key = "#id")
     @Transactional
     public IntercambioDTO actualizar(Long id, IntercambioUpdateDTO dto) {
-        log.info("Actualizando intercambio con id: {}", id);
 
         Intercambio intercambio = findActiveEntity(id);
 
-        if (!UsuarioAutenticado.id().equals(intercambio.getIdUsuarioProponente())) {
+        if (!UsuarioAutenticado.id()
+                .equals(intercambio.getIdUsuarioProponente())) {
             throw new AccessDeniedException("Solo el proponente puede editar");
         }
 
         if (intercambio.getEstado() != EstadoIntercambio.PROPUESTO) {
-            throw new IllegalStateException("Solo se pueden editar intercambios propuestos");
+            throw new IllegalStateException(
+                    "Solo se pueden editar intercambios propuestos");
         }
 
-        intercambioMapper.updateEntity(dto, intercambio);
+        if (!java.util.Objects.equals(dto.getIdUsuarioProponente(),
+                intercambio.getIdUsuarioProponente())
+                || !java.util.Objects.equals(dto.getIdUsuarioReceptor(),
+                intercambio.getIdUsuarioReceptor())) {
+            throw new IllegalArgumentException(
+                    "No se pueden modificar los participantes");
+        }
 
-        intercambio.getDetalles().clear();
-        agregarDetalles(intercambio, dto.getDetalles());
+        if (dto.getDetalles() == null
+                || dto.getDetalles().size() != intercambio.getDetalles().size()) {
+            throw new IllegalArgumentException(
+                    "No se pueden agregar ni eliminar productos");
+        }
 
-        Intercambio actualizado = intercambioRepository.save(intercambio);
+        var actuales = intercambio.getDetalles().stream()
+                .collect(java.util.stream.Collectors.toMap(
+                        d -> d.getTipoMovimiento().name()
+                                + ":" + d.getProducto().getId(),
+                        d -> d,
+                        (a, b) -> {
+                            throw new IllegalStateException("Detalle duplicado");
+                        }
+                ));
 
-        log.info("Intercambio actualizado con id: {}", id);
+        var nuevos = dto.getDetalles().stream()
+                .collect(java.util.stream.Collectors.toMap(
+                        d -> d.getTipoMovimiento().name()
+                                + ":" + d.getIdProducto(),
+                        d -> d,
+                        (a, b) -> {
+                            throw new IllegalArgumentException("Producto duplicado");
+                        }
+                ));
 
-        return intercambioMapper.toDTO(actualizado);
+        if (!actuales.keySet().equals(nuevos.keySet())) {
+            throw new IllegalArgumentException(
+                    "No se pueden cambiar los productos");
+        }
+
+        for (var entry : actuales.entrySet()) {
+            var nuevo = nuevos.get(entry.getKey());
+
+            if (nuevo.getCantidad() == null || nuevo.getCantidad() <= 0) {
+                throw new IllegalArgumentException(
+                        "Las cantidades deben ser mayores a cero");
+            }
+        }
+
+        if (dto.getDiferenciaDinero() != null
+                && (!Double.isFinite(dto.getDiferenciaDinero())
+                || dto.getDiferenciaDinero() < 0)) {
+            throw new IllegalArgumentException(
+                    "La diferencia de dinero no puede ser negativa");
+        }
+
+        if (dto.getUsuarioPagaDiferencia() != null
+                && !dto.getUsuarioPagaDiferencia()
+                .equals(intercambio.getIdUsuarioProponente())
+                && !dto.getUsuarioPagaDiferencia()
+                .equals(intercambio.getIdUsuarioReceptor())) {
+            throw new IllegalArgumentException(
+                    "El pagador debe ser participante del intercambio");
+        }
+
+        List<ReservaItemCreateDTO> ofrecidos = dto.getDetalles().stream()
+                .filter(d -> d.getTipoMovimiento()
+                        == py.com.lavitrinacoleccionistas.dto
+                        .TipoMovimientoIntercambio.OFRECIDO)
+                .map(d -> new ReservaItemCreateDTO()
+                        .idProducto(d.getIdProducto())
+                        .cantidad(d.getCantidad())
+                        .idUsuarioDestino(intercambio.getIdUsuarioReceptor()))
+                .toList();
+
+        if (ofrecidos.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "El intercambio debe tener productos ofrecidos");
+        }
+
+        // Sincroniza las reservas ofrecidas con MS Catálogo.
+        catalogoReservaClient.actualizarReserva(
+                id,
+                new ReservaCreateDTO()
+                        .origen(TipoOrigenReserva.INTERCAMBIO)
+                        .idOrigen(id)
+                        .items(ofrecidos)
+        );
+
+        // Actualiza cantidades sin reemplazar los detalles existentes.
+        for (var entry : actuales.entrySet()) {
+            entry.getValue().setCantidad(
+                    nuevos.get(entry.getKey()).getCantidad()
+            );
+        }
+
+        if (dto.getDiferenciaDinero() != null) {
+            intercambio.setDiferenciaDinero(
+                    java.math.BigDecimal.valueOf(dto.getDiferenciaDinero())
+            );
+        } else {
+            intercambio.setDiferenciaDinero(null);
+        }
+
+        intercambio.setUsuarioPagaDiferencia(
+                dto.getUsuarioPagaDiferencia()
+        );
+
+        return intercambioMapper.toDTO(
+                intercambioRepository.save(intercambio)
+        );
     }
 
 
@@ -242,6 +355,21 @@ public class IntercambioServiceImpl
 
             default -> throw new IllegalArgumentException(
                     "Cambio de estado no permitido"
+            );
+        }
+
+        switch (nuevoEstado) {
+            case ACEPTADO ->
+                    reservarSolicitados(intercambio);
+
+            case RECHAZADO, CANCELADO ->
+                    catalogoReservaClient.liberar(id);
+
+            case COMPLETADO ->
+                    catalogoReservaClient.confirmar(id);
+
+            default -> throw new IllegalArgumentException(
+                    "Estado no permitido"
             );
         }
 
@@ -339,5 +467,85 @@ public class IntercambioServiceImpl
             return intercambio;
         });
     }
+
+    private void reservarSolicitados(Intercambio intercambio) {
+
+        PublicacionDTO publicacion =
+                catalogoReservaClient.obtenerPublicacion(
+                        intercambio.getIdPublicacion()
+                );
+
+        if (publicacion == null) {
+            throw new IllegalStateException("Publicación no encontrada");
+        }
+
+        List<ReservaItemCreateDTO> items = intercambio.getDetalles()
+                .stream()
+                .filter(d -> d.getTipoMovimiento()
+                        == py.com.lavitrinacoleccionistas.enums.TipoMovimientoIntercambio.SOLICITADO)
+                .map(d -> {
+                    var detalle = publicacion.getDetalles()
+                            .stream()
+                            .filter(p -> p.getProducto() != null
+                                    && p.getProducto().getId()
+                                    .equals(d.getProducto().getId()))
+                            .findFirst()
+                            .orElseThrow(() ->
+                                    new IllegalStateException(
+                                            "Producto no pertenece a la publicación"
+                                    )
+                            );
+
+                    return new ReservaItemCreateDTO()
+                            .idDetallePublicacion(detalle.getId())
+                            .cantidad(d.getCantidad())
+                            .idUsuarioDestino(
+                                    intercambio.getIdUsuarioProponente()
+                            );
+                })
+                .toList();
+
+        if (items.isEmpty()) {
+            throw new IllegalStateException(
+                    "No hay productos solicitados"
+            );
+        }
+
+        catalogoReservaClient.reservar(
+                new ReservaCreateDTO()
+                        .origen(TipoOrigenReserva.INTERCAMBIO)
+                        .idOrigen(intercambio.getId())
+                        .items(items)
+        );
+    }
+
+    private void reservarOfrecidos(
+            Long idIntercambio,
+            IntercambioCreateDTO dto
+    ) {
+        List<ReservaItemCreateDTO> items = dto.getDetalles()
+                .stream()
+                .filter(d -> d.getTipoMovimiento()
+                        == TipoMovimientoIntercambio.OFRECIDO)
+                .map(d -> new ReservaItemCreateDTO()
+                        .idProducto(d.getIdProducto())
+                        .cantidad(d.getCantidad())
+                        .idUsuarioDestino(dto.getIdUsuarioReceptor()))
+                .toList();
+
+        if (items.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "El intercambio debe incluir productos ofrecidos"
+            );
+        }
+
+        catalogoReservaClient.reservar(
+                new ReservaCreateDTO()
+                        .origen(TipoOrigenReserva.INTERCAMBIO)
+                        .idOrigen(idIntercambio)
+                        .items(items)
+        );
+    }
+
 
 }
