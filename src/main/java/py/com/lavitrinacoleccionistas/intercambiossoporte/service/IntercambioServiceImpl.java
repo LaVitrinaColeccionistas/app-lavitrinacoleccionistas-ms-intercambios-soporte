@@ -427,7 +427,7 @@ public class IntercambioServiceImpl
 
 
 
-
+    /*
     @Override
     @Transactional(readOnly = true)
     public Page<IntercambioDTO> getByFilter(IntercambioFilter filter) {
@@ -472,6 +472,32 @@ public class IntercambioServiceImpl
             }
 
             return intercambio;
+        });
+    }*/
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<IntercambioDTO> getByFilter(IntercambioFilter filter) {
+        if (!UsuarioAutenticado.esAdmin()) {
+            filter.setIdUsuario(UsuarioAutenticado.id());
+        }
+
+        Page<IntercambioDTO> page = super.getByFilter(filter);
+
+        Cache cache = cacheManager.getCache("intercambios");
+        if (cache == null) {
+            log.warn("CACHE NO DISPONIBLE: intercambios");
+            return page;
+        }
+
+        return page.map(dto -> {
+            try {
+                cache.put(dto.getId(), dto);
+                log.info("CACHE SET intercambios::{}", dto.getId());
+            } catch (RuntimeException ex) {
+                log.warn("CACHE ERROR intercambios::{} - {}", dto.getId(), ex.getMessage());
+            }
+            return dto;
         });
     }
 
