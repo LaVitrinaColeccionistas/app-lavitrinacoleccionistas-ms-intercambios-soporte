@@ -410,6 +410,7 @@ public class IntercambioServiceImpl
 
 
     @Override
+    @PreAuthorize("hasRole('ADMIN')")
     @CacheEvict(value = "intercambios", key = "#id")
     @Transactional
     public void delete(Long id) {

@@ -19,7 +19,7 @@ import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.info.Info;
-
+import py.com.lavitrinacoleccionistas.intercambiossoporte.exception.GlobalExceptionHandler;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 import java.util.List;
@@ -67,7 +67,8 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(
             HttpSecurity http,
-            JwtAuthenticationConverter converter) throws Exception {
+            JwtAuthenticationConverter converter,
+            GlobalExceptionHandler errorHandler) throws Exception {
 
         return http
                 .csrf(csrf -> csrf.disable())
@@ -86,11 +87,16 @@ public class SecurityConfig {
                         .authenticated()
                         .anyRequest().denyAll()
                 )
+                .exceptionHandling(ex -> ex
+                        .authenticationEntryPoint(errorHandler)
+                        .accessDeniedHandler(errorHandler))
                 .oauth2ResourceServer(oauth -> oauth
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(converter))
-                )
+                        .authenticationEntryPoint(errorHandler)
+                        .accessDeniedHandler(errorHandler))
                 .build();
     }
+
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()

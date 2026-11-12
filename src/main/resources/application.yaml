@@ -51,7 +51,7 @@ app:
     default-ttl: ${CACHE_DEFAULT_TTL:10m}
     domains:
       intercambios: ${CACHE_TTL_INTERCAMBIOS:5m}
-      tickets: ${CACHE_TTL_TICKETS:5m}
+      tickets: ${CACHE_TTL_TICKETS:0s}
 
   security:
     jwt:

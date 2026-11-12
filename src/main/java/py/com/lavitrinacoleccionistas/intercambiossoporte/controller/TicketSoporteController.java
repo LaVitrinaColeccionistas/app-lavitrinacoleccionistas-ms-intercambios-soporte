@@ -22,6 +22,7 @@ public class TicketSoporteController {
 
     private final ITicketSoporteService ticketSoporteService;
 
+    @PreAuthorize("isAuthenticated()")
     @PostMapping
     public ResponseEntity<TicketSoporteDTO> crear(
             @Valid @RequestBody TicketSoporteCreateDTO dto

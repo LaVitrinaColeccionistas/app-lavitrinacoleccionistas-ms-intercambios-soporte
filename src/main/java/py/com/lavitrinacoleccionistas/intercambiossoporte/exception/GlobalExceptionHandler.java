@@ -1,7 +1,10 @@
 package py.com.lavitrinacoleccionistas.intercambiossoporte.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,9 +14,14 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -24,7 +32,52 @@ import org.springframework.web.client.RestClientException;
 
 @Slf4j
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler
+        implements AuthenticationEntryPoint, AccessDeniedHandler {
+
+    private final HandlerExceptionResolver resolver;
+
+    public GlobalExceptionHandler(
+            @Lazy @Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver
+    ) {
+        this.resolver = resolver;
+    }
+
+    // 401 cortado por el filtro de seguridad: se delega a los @ExceptionHandler
+    @Override
+    public void commence(
+            HttpServletRequest req,
+            HttpServletResponse res,
+            AuthenticationException ex
+    ) throws IOException {
+        resolver.resolveException(req, res, null, ex);
+    }
+
+    // 403 cortado por el filtro de seguridad: se delega a los @ExceptionHandler
+    @Override
+    public void handle(
+            HttpServletRequest req,
+            HttpServletResponse res,
+            AccessDeniedException ex
+    ) throws IOException {
+        resolver.resolveException(req, res, null, ex);
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public ResponseEntity<ApiError> handleAuthentication(
+            AuthenticationException ex,
+            HttpServletRequest req
+    ) {
+        log.warn("No autenticado: {}", ex.getMessage());
+
+        return build(
+                HttpStatus.UNAUTHORIZED,
+                "No autenticado",
+                "Token ausente, inválido o expirado",
+                req,
+                null
+        );
+    }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ApiError> handleNotFound(
@@ -175,6 +228,7 @@ public class GlobalExceptionHandler {
                 null
         );
     }
+
     @ExceptionHandler(RestClientResponseException.class)
     public ResponseEntity<ApiError> handleCatalogoHttp(
             RestClientResponseException ex,

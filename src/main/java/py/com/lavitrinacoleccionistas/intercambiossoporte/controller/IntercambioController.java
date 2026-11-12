@@ -19,6 +19,10 @@ import py.com.lavitrinacoleccionistas.entity.Intercambio;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.filter.IntercambioFilter;
 import py.com.lavitrinacoleccionistas.intercambiossoporte.service.IntercambioServiceImpl;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Slf4j
 @RestController
@@ -76,5 +80,13 @@ public class IntercambioController
         return ResponseEntity.ok(service.actualizarEstado(id, dto));
     }
 
+    @Override
+    @PreAuthorize("hasAnyRole('COMPRADOR','VENDEDOR','ADMIN')")
+    @GetMapping
+    public ResponseEntity<Page<IntercambioDTO>> getByFilter(
+            @ParameterObject @ModelAttribute IntercambioFilter filter
+    ) {
+        return super.getByFilter(filter);
+    }
 
 }
