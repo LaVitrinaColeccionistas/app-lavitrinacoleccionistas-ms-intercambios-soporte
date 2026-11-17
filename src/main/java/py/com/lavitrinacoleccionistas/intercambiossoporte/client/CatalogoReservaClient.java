@@ -1,7 +1,9 @@
-
 package py.com.lavitrinacoleccionistas.intercambiossoporte.client;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,15 +38,21 @@ public class CatalogoReservaClient {
     private final RestClient client;
 
     public CatalogoReservaClient(
-            @Value("${app.catalogo.url}") String url
+            LoadBalancerClient loadBalancerClient,
+            @Value("${app.catalogo.url}") String url,
+            @Value("${app.catalogo.connect-timeout:3s}") Duration connectTimeout,
+            @Value("${app.catalogo.read-timeout:10s}") Duration readTimeout
     ) {
         var factory = new SimpleClientHttpRequestFactory();
-        factory.setConnectTimeout(Duration.ofSeconds(3));
-        factory.setReadTimeout(Duration.ofSeconds(10));
+        factory.setConnectTimeout(connectTimeout);
+        factory.setReadTimeout(readTimeout);
 
         this.client = RestClient.builder()
                 .baseUrl(url)
                 .requestFactory(factory)
+                .requestInterceptor(new LoadBalancerInterceptor(
+                        loadBalancerClient,
+                        new LoadBalancerRequestFactory(loadBalancerClient)))
                 .build();
     }
 
