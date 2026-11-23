@@ -15,7 +15,7 @@
 	<groupId>py.com.lavitrinacoleccionistas</groupId>
 	<artifactId>app-lavitrina-ms-intercambios-soporte</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<packaging>war</packaging>
 	<properties>
 		<java.version>25</java.version>
 		<mapstruct.version>1.6.3</mapstruct.version>
@@ -43,6 +43,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat-runtime</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -105,6 +111,12 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
+		<!-- Mail (Gmail SMTP) para los cron jobs -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
 		<!-- Seguridad -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -131,6 +143,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>ms-intercambios</finalName>
 		<plugins>
 
 			<plugin>

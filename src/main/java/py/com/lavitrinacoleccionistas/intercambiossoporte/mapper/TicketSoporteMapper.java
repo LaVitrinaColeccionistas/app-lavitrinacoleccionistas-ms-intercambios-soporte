@@ -13,6 +13,7 @@ public interface TicketSoporteMapper {
     TicketSoporteDTO toDTO(TicketSoporte entity);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "notificadoAdmin", ignore = true)
     @Mapping(
             target = "fechaEnvio",
             expression = "java(java.time.LocalDateTime.now())"

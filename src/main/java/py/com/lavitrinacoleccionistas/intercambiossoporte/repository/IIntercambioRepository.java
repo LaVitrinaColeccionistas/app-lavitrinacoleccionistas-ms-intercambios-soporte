@@ -9,6 +9,7 @@ import py.com.lavitrinacoleccionistas.entity.Intercambio;
 import py.com.lavitrinacoleccionistas.enums.EstadoIntercambio;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -69,5 +70,9 @@ public interface IIntercambioRepository
             @Param("fechaDesde") LocalDateTime fechaDesde,
             @Param("fechaHasta") LocalDateTime fechaHasta,
             Pageable pageable
+    );
+
+    List<Intercambio> findByEstadoAndNotificacionAceptadoEnviadaFalseAndActivoTrue(
+            EstadoIntercambio estado
     );
 }

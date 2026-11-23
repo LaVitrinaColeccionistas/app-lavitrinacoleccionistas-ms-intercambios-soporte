@@ -41,6 +41,21 @@ spring:
   cache:
     type: redis
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
 app:
   pagination:
     sort-field: ${PAGE_SORT_FIELD:id}
@@ -53,13 +68,22 @@ app:
       intercambios: ${CACHE_TTL_INTERCAMBIOS:5m}
       tickets: ${CACHE_TTL_TICKETS:0s}
 
+  mail:
+    admin-destino: ${ADMIN_EMAIL:}
+
+  jobs:
+    cron: ${JOBS_CRON:0 */2 * * * *}
+
   security:
     jwt:
       secret: ${JWT_SECRET}
       issuer: ${JWT_ISSUER:lvc-auth}
 
   catalogo:
-    url: ${CATALOGO_URL:http://localhost:8082/api}
+    load-balanced: ${CATALOGO_LOAD_BALANCED:true}
+    url: ${CATALOGO_URL:http://app-lavitrinacoleccionistas-ms-catalogo/ms-catalogo}
+    connect-timeout: ${CATALOGO_CONNECT_TIMEOUT:3s}
+    read-timeout: ${CATALOGO_READ_TIMEOUT:10s}
 
 server:
   port: ${SERVER_PORT:8081}
@@ -72,5 +96,9 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
+    ip-address: ${HOST_IP}
+    non-secure-port: ${TOMCAT_PORT:8090}
     prefer-ip-address: true
-    instance-id: ${spring.application.name}:${server.port}
+    instance-id: ${spring.application.name}:${HOST_IP}:${TOMCAT_PORT:8090}
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10

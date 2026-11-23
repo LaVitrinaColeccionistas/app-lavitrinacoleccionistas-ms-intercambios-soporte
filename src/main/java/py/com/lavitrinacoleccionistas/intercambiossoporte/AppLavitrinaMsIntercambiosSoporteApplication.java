@@ -5,13 +5,16 @@ import io.swagger.v3.oas.annotations.servers.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableCaching
+@EnableScheduling
 @EntityScan(basePackages = "py.com.lavitrinacoleccionistas.entity")
 @OpenAPIDefinition(servers = @Server(url = "/api"))
-public class AppLavitrinaMsIntercambiosSoporteApplication {
+public class AppLavitrinaMsIntercambiosSoporteApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppLavitrinaMsIntercambiosSoporteApplication.class, args);
